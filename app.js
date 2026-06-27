@@ -1,8 +1,8 @@
 export default {
   onLaunch() {
-    console.log('妙记 launched');
+    console.log('妙卡 launched');
   },
   globalData: {
-    appName: '妙记'
+    appName: '妙卡'
   }
 };

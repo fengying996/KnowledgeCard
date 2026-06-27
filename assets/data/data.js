@@ -4,8 +4,7 @@ const studyData = {
   "studyInsights": {
     "专利代理人": "专利代理人科目适合按规则判断、文书写法和程序时序拆卡学习。",
     "法律从业资格": "法考类科目最怕只记结论不记适用条件，卡片要突出前提、规则和例外。",
-    "中医执照": "中医类卡片最关键的是把病机和治法配对，不要只背方名。",
-    "历史": "历史类卡片适合按时间、人物和影响三条线并行记忆，先抓年份，再串联事件意义。"
+    "中医执照": "中医类卡片最关键的是把病机和治法配对，不要只背方名。"
   },
   "subjects": [
     {
@@ -18,7 +17,7 @@ const studyData = {
       "memoryHint": "重点关注授权条件、程序节点和文书表达，先记原则，再补例外情形。",
       "tagTwo": "审查",
       "tagThree": "撰写",
-      "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+      "illustrationUrl": "https://picsum.photos/400/300?random=1",
       "cards": [
         {
           "id": "1-card-1",
@@ -30,7 +29,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=2",
           "aiInsight": "专利代理人第1卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -43,7 +42,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=3",
           "aiInsight": "专利代理人第2卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -56,7 +55,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=4",
           "aiInsight": "专利代理人第3卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -69,7 +68,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=5",
           "aiInsight": "专利代理人第4卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -82,7 +81,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=6",
           "aiInsight": "专利代理人第5卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -95,7 +94,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=7",
           "aiInsight": "专利代理人第6卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -108,7 +107,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=8",
           "aiInsight": "专利代理人第7卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -121,7 +120,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=9",
           "aiInsight": "专利代理人第8卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -134,7 +133,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=10",
           "aiInsight": "专利代理人第9卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -147,7 +146,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=11",
           "aiInsight": "专利代理人第10卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -160,7 +159,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=12",
           "aiInsight": "专利代理人第11卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -173,7 +172,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=13",
           "aiInsight": "专利代理人第12卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -186,7 +185,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=14",
           "aiInsight": "专利代理人第13卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -199,7 +198,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=15",
           "aiInsight": "专利代理人第14卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -212,7 +211,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=16",
           "aiInsight": "专利代理人第15卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -225,7 +224,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=17",
           "aiInsight": "专利代理人第16卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -238,7 +237,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=18",
           "aiInsight": "专利代理人第17卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -251,7 +250,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=19",
           "aiInsight": "专利代理人第18卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -264,7 +263,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=20",
           "aiInsight": "专利代理人第19卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -277,7 +276,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=21",
           "aiInsight": "专利代理人第20卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -290,7 +289,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=22",
           "aiInsight": "专利代理人第21卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -303,7 +302,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=23",
           "aiInsight": "专利代理人第22卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -316,7 +315,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=24",
           "aiInsight": "专利代理人第23卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -329,7 +328,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=25",
           "aiInsight": "专利代理人第24卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -342,7 +341,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=26",
           "aiInsight": "专利代理人第25卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -355,7 +354,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=27",
           "aiInsight": "专利代理人第26卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -368,7 +367,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=28",
           "aiInsight": "专利代理人第27卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -381,7 +380,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=29",
           "aiInsight": "专利代理人第28卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -394,7 +393,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=30",
           "aiInsight": "专利代理人第29卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -407,7 +406,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=31",
           "aiInsight": "专利代理人第30卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -420,7 +419,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=32",
           "aiInsight": "专利代理人第31卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -433,7 +432,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=33",
           "aiInsight": "专利代理人第32卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -446,7 +445,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=34",
           "aiInsight": "专利代理人第33卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -459,7 +458,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=35",
           "aiInsight": "专利代理人第34卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -472,7 +471,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=36",
           "aiInsight": "专利代理人第35卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -485,7 +484,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=37",
           "aiInsight": "专利代理人第36卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -498,7 +497,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=38",
           "aiInsight": "专利代理人第37卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -511,7 +510,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=39",
           "aiInsight": "专利代理人第38卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -524,7 +523,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=40",
           "aiInsight": "专利代理人第39卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -537,7 +536,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=41",
           "aiInsight": "专利代理人第40卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -550,7 +549,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=42",
           "aiInsight": "专利代理人第41卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -563,7 +562,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=43",
           "aiInsight": "专利代理人第42卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         },
         {
@@ -576,7 +575,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕是否可制造、可使用、可重复实现来判断。本卡重点把实用性和效果/实施建立稳定联想。",
           "tagTwo": "效果",
           "tagThree": "实施",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=44",
           "aiInsight": "专利代理人第43卡建议先口述实用性判断的判断路径，再用一句话总结实用性的高频误区。"
         },
         {
@@ -589,7 +588,7 @@ const studyData = {
           "memoryHint": "记忆提示：先搭建技术背景、发明内容，再补实施方式。本卡重点把说明书和结构/实施例建立稳定联想。",
           "tagTwo": "结构",
           "tagThree": "实施例",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=45",
           "aiInsight": "专利代理人第44卡建议先口述说明书撰写的判断路径，再用一句话总结说明书的高频误区。"
         },
         {
@@ -602,7 +601,7 @@ const studyData = {
           "memoryHint": "记忆提示：先守住核心保护范围，再细化从属限定。本卡重点把权利要求和独权/从权建立稳定联想。",
           "tagTwo": "独权",
           "tagThree": "从权",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=46",
           "aiInsight": "专利代理人第45卡建议先口述权利要求布局的判断路径，再用一句话总结权利要求的高频误区。"
         },
         {
@@ -615,7 +614,7 @@ const studyData = {
           "memoryHint": "记忆提示：特别关注期限起算点和证明文件要求。本卡重点把优先权和期限/文件建立稳定联想。",
           "tagTwo": "期限",
           "tagThree": "文件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=47",
           "aiInsight": "专利代理人第46卡建议先口述优先权规则的判断路径，再用一句话总结优先权的高频误区。"
         },
         {
@@ -628,7 +627,7 @@ const studyData = {
           "memoryHint": "记忆提示：先稳住权利要求，再准备对比文件和修改口径。本卡重点把无效和证据/对比建立稳定联想。",
           "tagTwo": "证据",
           "tagThree": "对比",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=48",
           "aiInsight": "专利代理人第47卡建议先口述无效宣告应对的判断路径，再用一句话总结无效的高频误区。"
         },
         {
@@ -641,7 +640,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕全面覆盖和等同特征逐层比对。本卡重点把侵权和比对/等同建立稳定联想。",
           "tagTwo": "比对",
           "tagThree": "等同",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=49",
           "aiInsight": "专利代理人第48卡建议先口述侵权判断路径的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -654,7 +653,7 @@ const studyData = {
           "memoryHint": "记忆提示：先找最接近现有技术，再看差异点是否被公开。本卡重点把新颖性和对比/检索建立稳定联想。",
           "tagTwo": "对比",
           "tagThree": "检索",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=50",
           "aiInsight": "专利代理人第49卡建议先口述新颖性判断的判断路径，再用一句话总结新颖性的高频误区。"
         },
         {
@@ -667,7 +666,7 @@ const studyData = {
           "memoryHint": "记忆提示：先识别区别特征，再判断技术启示是否足够。本卡重点把创造性和动机/区别建立稳定联想。",
           "tagTwo": "动机",
           "tagThree": "区别",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20patent%20sketches%2C%20legal%20paper%20documents%20and%20fountain%20pen%20on%20desk%2C%20minimal%20educational%20card%20art%2C%20soft%20lighting%2C%20high%20detail%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=51",
           "aiInsight": "专利代理人第50卡建议先口述创造性三步法的判断路径，再用一句话总结创造性的高频误区。"
         }
       ]
@@ -682,7 +681,7 @@ const studyData = {
       "memoryHint": "优先拉通部门法框架，再细化构成要件、责任承担和程序顺序。",
       "tagTwo": "民法",
       "tagThree": "刑法",
-      "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+      "illustrationUrl": "https://picsum.photos/400/300?random=52",
       "cards": [
         {
           "id": "2-card-1",
@@ -694,7 +693,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=53",
           "aiInsight": "法律从业资格第1卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -707,7 +706,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=54",
           "aiInsight": "法律从业资格第2卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -720,7 +719,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=55",
           "aiInsight": "法律从业资格第3卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -733,7 +732,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=56",
           "aiInsight": "法律从业资格第4卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -746,7 +745,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=57",
           "aiInsight": "法律从业资格第5卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -759,7 +758,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=58",
           "aiInsight": "法律从业资格第6卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -772,7 +771,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=59",
           "aiInsight": "法律从业资格第7卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -785,7 +784,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=60",
           "aiInsight": "法律从业资格第8卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -798,7 +797,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=61",
           "aiInsight": "法律从业资格第9卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -811,7 +810,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=62",
           "aiInsight": "法律从业资格第10卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -824,7 +823,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=63",
           "aiInsight": "法律从业资格第11卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -837,7 +836,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=64",
           "aiInsight": "法律从业资格第12卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -850,7 +849,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=65",
           "aiInsight": "法律从业资格第13卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -863,7 +862,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=66",
           "aiInsight": "法律从业资格第14卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -876,7 +875,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=67",
           "aiInsight": "法律从业资格第15卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -889,7 +888,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=68",
           "aiInsight": "法律从业资格第16卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -902,7 +901,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=69",
           "aiInsight": "法律从业资格第17卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -915,7 +914,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=70",
           "aiInsight": "法律从业资格第18卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -928,7 +927,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=71",
           "aiInsight": "法律从业资格第19卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -941,7 +940,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=72",
           "aiInsight": "法律从业资格第20卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -954,7 +953,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=73",
           "aiInsight": "法律从业资格第21卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -967,7 +966,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=74",
           "aiInsight": "法律从业资格第22卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -980,7 +979,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=75",
           "aiInsight": "法律从业资格第23卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -993,7 +992,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=76",
           "aiInsight": "法律从业资格第24卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1006,7 +1005,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=77",
           "aiInsight": "法律从业资格第25卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1019,7 +1018,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=78",
           "aiInsight": "法律从业资格第26卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1032,7 +1031,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=79",
           "aiInsight": "法律从业资格第27卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1045,7 +1044,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=80",
           "aiInsight": "法律从业资格第28卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1058,7 +1057,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=81",
           "aiInsight": "法律从业资格第29卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1071,7 +1070,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=82",
           "aiInsight": "法律从业资格第30卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1084,7 +1083,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=83",
           "aiInsight": "法律从业资格第31卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1097,7 +1096,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=84",
           "aiInsight": "法律从业资格第32卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1110,7 +1109,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=85",
           "aiInsight": "法律从业资格第33卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1123,7 +1122,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=86",
           "aiInsight": "法律从业资格第34卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1136,7 +1135,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=87",
           "aiInsight": "法律从业资格第35卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1149,7 +1148,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=88",
           "aiInsight": "法律从业资格第36卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1162,7 +1161,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=89",
           "aiInsight": "法律从业资格第37卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1175,7 +1174,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=90",
           "aiInsight": "法律从业资格第38卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1188,7 +1187,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=91",
           "aiInsight": "法律从业资格第39卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1201,7 +1200,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=92",
           "aiInsight": "法律从业资格第40卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1214,7 +1213,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=93",
           "aiInsight": "法律从业资格第41卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1227,7 +1226,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=94",
           "aiInsight": "法律从业资格第42卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1240,7 +1239,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=95",
           "aiInsight": "法律从业资格第43卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1253,7 +1252,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=96",
           "aiInsight": "法律从业资格第44卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1266,7 +1265,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=97",
           "aiInsight": "法律从业资格第45卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1279,7 +1278,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=98",
           "aiInsight": "法律从业资格第46卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1292,7 +1291,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=99",
           "aiInsight": "法律从业资格第47卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1305,7 +1304,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=100",
           "aiInsight": "法律从业资格第48卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1318,7 +1317,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=1",
           "aiInsight": "法律从业资格第49卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1331,7 +1330,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=2",
           "aiInsight": "法律从业资格第50卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1344,7 +1343,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=3",
           "aiInsight": "法律从业资格第51卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1357,7 +1356,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=4",
           "aiInsight": "法律从业资格第52卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1370,7 +1369,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=5",
           "aiInsight": "法律从业资格第53卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1383,7 +1382,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=6",
           "aiInsight": "法律从业资格第54卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1396,7 +1395,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=7",
           "aiInsight": "法律从业资格第55卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1409,7 +1408,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=8",
           "aiInsight": "法律从业资格第56卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1422,7 +1421,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=9",
           "aiInsight": "法律从业资格第57卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1435,7 +1434,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=10",
           "aiInsight": "法律从业资格第58卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1448,7 +1447,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=11",
           "aiInsight": "法律从业资格第59卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1461,7 +1460,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=12",
           "aiInsight": "法律从业资格第60卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1474,7 +1473,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=13",
           "aiInsight": "法律从业资格第61卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1487,7 +1486,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=14",
           "aiInsight": "法律从业资格第62卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1500,7 +1499,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=15",
           "aiInsight": "法律从业资格第63卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1513,7 +1512,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=16",
           "aiInsight": "法律从业资格第64卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1526,7 +1525,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=17",
           "aiInsight": "法律从业资格第65卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1539,7 +1538,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=18",
           "aiInsight": "法律从业资格第66卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1552,7 +1551,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=19",
           "aiInsight": "法律从业资格第67卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1565,7 +1564,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=20",
           "aiInsight": "法律从业资格第68卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1578,7 +1577,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=21",
           "aiInsight": "法律从业资格第69卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1591,7 +1590,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=22",
           "aiInsight": "法律从业资格第70卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1604,7 +1603,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=23",
           "aiInsight": "法律从业资格第71卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1617,7 +1616,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=24",
           "aiInsight": "法律从业资格第72卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1630,7 +1629,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=25",
           "aiInsight": "法律从业资格第73卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1643,7 +1642,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=26",
           "aiInsight": "法律从业资格第74卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1656,7 +1655,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=27",
           "aiInsight": "法律从业资格第75卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1669,7 +1668,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=28",
           "aiInsight": "法律从业资格第76卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         },
         {
@@ -1682,7 +1681,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕起诉、答辩、举证、裁判的顺序记忆。本卡重点把民诉和管辖/举证建立稳定联想。",
           "tagTwo": "管辖",
           "tagThree": "举证",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=29",
           "aiInsight": "法律从业资格第77卡建议先口述民事诉讼程序的判断路径，再用一句话总结民诉的高频误区。"
         },
         {
@@ -1695,7 +1694,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点记侦查、起诉、审判中的权利保障节点。本卡重点把刑诉和强制/审判建立稳定联想。",
           "tagTwo": "强制",
           "tagThree": "审判",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=30",
           "aiInsight": "法律从业资格第78卡建议先口述刑事诉讼流程的判断路径，再用一句话总结刑诉的高频误区。"
         },
         {
@@ -1708,7 +1707,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断职权来源，再检查程序是否合法。本卡重点把行政法和权限/程序建立稳定联想。",
           "tagTwo": "权限",
           "tagThree": "程序",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=31",
           "aiInsight": "法律从业资格第79卡建议先口述行政法合法性的判断路径，再用一句话总结行政法的高频误区。"
         },
         {
@@ -1721,7 +1720,7 @@ const studyData = {
           "memoryHint": "记忆提示：对公司治理和票据规则要形成模块化记忆。本卡重点把商经和公司/票据建立稳定联想。",
           "tagTwo": "公司",
           "tagThree": "票据",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=32",
           "aiInsight": "法律从业资格第80卡建议先口述商经法高频点的判断路径，再用一句话总结商经的高频误区。"
         },
         {
@@ -1734,7 +1733,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断成立条件，再看效力瑕疵和救济路径。本卡重点把行为和效力/要件建立稳定联想。",
           "tagTwo": "效力",
           "tagThree": "要件",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=33",
           "aiInsight": "法律从业资格第81卡建议先口述民事法律行为的判断路径，再用一句话总结行为的高频误区。"
         },
         {
@@ -1747,7 +1746,7 @@ const studyData = {
           "memoryHint": "记忆提示：重点分清登记主义与交付主义的适用差异。本卡重点把物权和公示/交付建立稳定联想。",
           "tagTwo": "公示",
           "tagThree": "交付",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=34",
           "aiInsight": "法律从业资格第82卡建议先口述物权变动规则的判断路径，再用一句话总结物权的高频误区。"
         },
         {
@@ -1760,7 +1759,7 @@ const studyData = {
           "memoryHint": "记忆提示：先判断违约类型，再匹配继续履行和赔偿规则。本卡重点把合同和违约/救济建立稳定联想。",
           "tagTwo": "违约",
           "tagThree": "救济",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=35",
           "aiInsight": "法律从业资格第83卡建议先口述合同责任承担的判断路径，再用一句话总结合同的高频误区。"
         },
         {
@@ -1773,7 +1772,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁定责任基础，再分析因果关系和免责事由。本卡重点把侵权和过错/因果建立稳定联想。",
           "tagTwo": "过错",
           "tagThree": "因果",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=36",
           "aiInsight": "法律从业资格第84卡建议先口述侵权责任结构的判断路径，再用一句话总结侵权的高频误区。"
         },
         {
@@ -1786,7 +1785,7 @@ const studyData = {
           "memoryHint": "记忆提示：按客体、客观、主体、主观四层逐项筛查。本卡重点把犯罪和构成/主观建立稳定联想。",
           "tagTwo": "构成",
           "tagThree": "主观",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=37",
           "aiInsight": "法律从业资格第85卡建议先口述犯罪构成判断的判断路径，再用一句话总结犯罪的高频误区。"
         },
         {
@@ -1799,7 +1798,7 @@ const studyData = {
           "memoryHint": "记忆提示：先定角色，再看行为贡献和责任范围。本卡重点把共犯和分工/责任建立稳定联想。",
           "tagTwo": "分工",
           "tagThree": "责任",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20courtroom%20law%20books%20and%20scales%2C%20minimal%20educational%20card%20art%2C%20balanced%20composition%2C%20dark%20neutral%20background%2C%20high%20detail&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=38",
           "aiInsight": "法律从业资格第86卡建议先口述共同犯罪区分的判断路径，再用一句话总结共犯的高频误区。"
         }
       ]
@@ -1814,7 +1813,7 @@ const studyData = {
       "memoryHint": "先建立病机与证候关系，再串联治法、方剂和核心药物。",
       "tagTwo": "方剂",
       "tagThree": "临床",
-      "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+      "illustrationUrl": "https://picsum.photos/400/300?random=39",
       "cards": [
         {
           "id": "3-card-1",
@@ -1826,7 +1825,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=40",
           "aiInsight": "中医执照第1卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -1839,7 +1838,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=41",
           "aiInsight": "中医执照第2卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -1852,7 +1851,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=42",
           "aiInsight": "中医执照第3卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -1865,7 +1864,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=43",
           "aiInsight": "中医执照第4卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -1878,7 +1877,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=44",
           "aiInsight": "中医执照第5卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -1891,7 +1890,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=45",
           "aiInsight": "中医执照第6卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -1904,7 +1903,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=46",
           "aiInsight": "中医执照第7卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -1917,7 +1916,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=47",
           "aiInsight": "中医执照第8卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -1930,7 +1929,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=48",
           "aiInsight": "中医执照第9卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -1943,7 +1942,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=49",
           "aiInsight": "中医执照第10卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -1956,7 +1955,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=50",
           "aiInsight": "中医执照第11卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -1969,7 +1968,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=51",
           "aiInsight": "中医执照第12卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -1982,7 +1981,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=52",
           "aiInsight": "中医执照第13卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -1995,7 +1994,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=53",
           "aiInsight": "中医执照第14卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2008,7 +2007,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=54",
           "aiInsight": "中医执照第15卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2021,7 +2020,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=55",
           "aiInsight": "中医执照第16卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2034,7 +2033,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=56",
           "aiInsight": "中医执照第17卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2047,7 +2046,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=57",
           "aiInsight": "中医执照第18卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2060,7 +2059,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=58",
           "aiInsight": "中医执照第19卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2073,7 +2072,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=59",
           "aiInsight": "中医执照第20卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2086,7 +2085,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=60",
           "aiInsight": "中医执照第21卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2099,7 +2098,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=61",
           "aiInsight": "中医执照第22卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2112,7 +2111,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=62",
           "aiInsight": "中医执照第23卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2125,7 +2124,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=63",
           "aiInsight": "中医执照第24卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2138,7 +2137,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=64",
           "aiInsight": "中医执照第25卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2151,7 +2150,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=65",
           "aiInsight": "中医执照第26卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2164,7 +2163,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=66",
           "aiInsight": "中医执照第27卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2177,7 +2176,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=67",
           "aiInsight": "中医执照第28卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2190,7 +2189,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=68",
           "aiInsight": "中医执照第29卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2203,7 +2202,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=69",
           "aiInsight": "中医执照第30卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2216,7 +2215,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=70",
           "aiInsight": "中医执照第31卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2229,7 +2228,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=71",
           "aiInsight": "中医执照第32卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2242,7 +2241,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=72",
           "aiInsight": "中医执照第33卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2255,7 +2254,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=73",
           "aiInsight": "中医执照第34卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2268,7 +2267,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=74",
           "aiInsight": "中医执照第35卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2281,7 +2280,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=75",
           "aiInsight": "中医执照第36卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2294,7 +2293,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=76",
           "aiInsight": "中医执照第37卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2307,7 +2306,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=77",
           "aiInsight": "中医执照第38卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2320,7 +2319,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=78",
           "aiInsight": "中医执照第39卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2333,7 +2332,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=79",
           "aiInsight": "中医执照第40卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2346,7 +2345,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=80",
           "aiInsight": "中医执照第41卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2359,7 +2358,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=81",
           "aiInsight": "中医执照第42卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2372,7 +2371,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=82",
           "aiInsight": "中医执照第43卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2385,7 +2384,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=83",
           "aiInsight": "中医执照第44卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2398,7 +2397,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=84",
           "aiInsight": "中医执照第45卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2411,7 +2410,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=85",
           "aiInsight": "中医执照第46卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2424,7 +2423,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=86",
           "aiInsight": "中医执照第47卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2437,7 +2436,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=87",
           "aiInsight": "中医执照第48卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2450,7 +2449,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=88",
           "aiInsight": "中医执照第49卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2463,7 +2462,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=89",
           "aiInsight": "中医执照第50卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2476,7 +2475,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=90",
           "aiInsight": "中医执照第51卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2489,7 +2488,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=91",
           "aiInsight": "中医执照第52卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2502,7 +2501,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=92",
           "aiInsight": "中医执照第53卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2515,7 +2514,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=93",
           "aiInsight": "中医执照第54卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2528,7 +2527,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=94",
           "aiInsight": "中医执照第55卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2541,7 +2540,7 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=95",
           "aiInsight": "中医执照第56卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
         },
         {
@@ -2554,7 +2553,7 @@ const studyData = {
           "memoryHint": "记忆提示：先理解对立统一，再记相互消长与转化。本卡重点把阴阳和属性/转化建立稳定联想。",
           "tagTwo": "属性",
           "tagThree": "转化",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=96",
           "aiInsight": "中医执照第57卡建议先口述阴阳五行基础的判断路径，再用一句话总结阴阳的高频误区。"
         },
         {
@@ -2567,7 +2566,7 @@ const studyData = {
           "memoryHint": "记忆提示：按心肝脾肺肾和腑的配合关系来记忆。本卡重点把脏腑和功能/联系建立稳定联想。",
           "tagTwo": "功能",
           "tagThree": "联系",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=97",
           "aiInsight": "中医执照第58卡建议先口述脏腑生理关系的判断路径，再用一句话总结脏腑的高频误区。"
         },
         {
@@ -2580,7 +2579,7 @@ const studyData = {
           "memoryHint": "记忆提示：先区分生成来源，再看运行与失调表现。本卡重点把气血和生成/运行建立稳定联想。",
           "tagTwo": "生成",
           "tagThree": "运行",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=98",
           "aiInsight": "中医执照第59卡建议先口述气血津液辨析的判断路径，再用一句话总结气血的高频误区。"
         },
         {
@@ -2593,7 +2592,7 @@ const studyData = {
           "memoryHint": "记忆提示：从外感六淫和内伤七情两条线来拆解。本卡重点把病机和外感/内伤建立稳定联想。",
           "tagTwo": "外感",
           "tagThree": "内伤",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=99",
           "aiInsight": "中医执照第60卡建议先口述病因病机判断的判断路径，再用一句话总结病机的高频误区。"
         },
         {
@@ -2606,7 +2605,7 @@ const studyData = {
           "memoryHint": "记忆提示：先抓主症，再把舌脉信息映射到证候。本卡重点把四诊和望闻/问切建立稳定联想。",
           "tagTwo": "望闻",
           "tagThree": "问切",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=100",
           "aiInsight": "中医执照第61卡建议先口述四诊信息提取的判断路径，再用一句话总结四诊的高频误区。"
         },
         {
@@ -2619,7 +2618,7 @@ const studyData = {
           "memoryHint": "记忆提示：围绕阴阳总纲细分表里寒热虚实。本卡重点把八纲和表里/寒热建立稳定联想。",
           "tagTwo": "表里",
           "tagThree": "寒热",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=1",
           "aiInsight": "中医执照第62卡建议先口述八纲辨证应用的判断路径，再用一句话总结八纲的高频误区。"
         },
         {
@@ -2632,7 +2631,7 @@ const studyData = {
           "memoryHint": "记忆提示：先认主方，再理解配伍层级和加减理由。本卡重点把方剂和君臣/加减建立稳定联想。",
           "tagTwo": "君臣",
           "tagThree": "加减",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=2",
           "aiInsight": "中医执照第63卡建议先口述方剂配伍思路的判断路径，再用一句话总结方剂的高频误区。"
         },
         {
@@ -2645,61 +2644,8 @@ const studyData = {
           "memoryHint": "记忆提示：先锁病机，再匹配治法和代表方药。本卡重点把证型和治法/用药建立稳定联想。",
           "tagTwo": "治法",
           "tagThree": "用药",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20traditional%20chinese%20medicine%20herbs%20and%20open%20medical%20book%2C%20minimal%20educational%20card%20art%2C%20soft%20daylight%2C%20centered%20composition&image_size=portrait_4_3",
+          "illustrationUrl": "https://picsum.photos/400/300?random=3",
           "aiInsight": "中医执照第64卡建议先口述常见证型训练的判断路径，再用一句话总结证型的高频误区。"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "历史",
-      "pendingCount": 3,
-      "scene": "围绕历史上的今天进行时间、事件与影响的联想记忆训练。",
-      "content": "历史科目以日期为主线，将事件背景、关键人物和后续影响串成记忆卡片，帮助快速建立时间轴。",
-      "memoryKey": "时间",
-      "memoryHint": "重点先记年份，再记事件关键词，最后补充人物和历史影响，形成稳定时间链。",
-      "tagTwo": "事件",
-      "tagThree": "影响",
-      "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20historical%20documents%2C%20old%20map%20and%20desk%20with%20timeline%20notes%2C%20minimal%20educational%20card%20art%2C%20soft%20warm%20lighting%2C%20centered%20composition&image_size=portrait_4_3",
-      "cards": [
-        {
-          "id": "4-card-1",
-          "order": 1,
-          "title": "联合国宪章签署 第1卡",
-          "scene": "历史当前进入历史上的今天训练卡，围绕6月26日联合国宪章签署事件进行第1轮复习。",
-          "content": "1945年6月26日，《联合国宪章》在旧金山签署，标志着二战后国际合作秩序的重要制度基础开始确立。请先说出年份，再补充签署地点与历史意义。",
-          "memoryKey": "1945",
-          "memoryHint": "记忆提示：先记1945年，再联想旧金山和战后国际秩序。本卡重点把年份和签署/国际合作建立稳定联想。",
-          "tagTwo": "签署",
-          "tagThree": "国际合作",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20united%20nations%20charter%20document%20signing%2C%20conference%20desk%2C%20historical%20papers%2C%20minimal%20educational%20card%20art%2C%20soft%20warm%20lighting%2C%20centered%20composition&image_size=portrait_4_3",
-          "aiInsight": "历史第1卡建议先口述1945年与旧金山两个关键锚点，再用一句话概括联合国宪章签署的历史意义。"
-        },
-        {
-          "id": "4-card-2",
-          "order": 2,
-          "title": "马达加斯加独立 第2卡",
-          "scene": "历史当前进入历史上的今天训练卡，围绕6月26日马达加斯加独立事件进行第2轮复习。",
-          "content": "1960年6月26日，马达加斯加宣布独立。这一事件是非洲民族独立浪潮中的重要节点。请先背出年份，再概括它所代表的历史趋势。",
-          "memoryKey": "1960",
-          "memoryHint": "记忆提示：先记1960年，再联想非洲独立浪潮和去殖民化进程。本卡重点把年份和独立/浪潮建立稳定联想。",
-          "tagTwo": "独立",
-          "tagThree": "浪潮",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20madagascar%20independence%20historical%20scene%2C%20flag%20and%20archival%20documents%2C%20minimal%20educational%20card%20art%2C%20soft%20warm%20lighting%2C%20centered%20composition&image_size=portrait_4_3",
-          "aiInsight": "历史第2卡建议先口述1960年与独立两个关键词，再补出去殖民化浪潮这个更高层的时间线背景。"
-        },
-        {
-          "id": "4-card-3",
-          "order": 3,
-          "title": "柏林空运启动 第3卡",
-          "scene": "历史当前进入历史上的今天训练卡，围绕6月26日柏林空运启动事件进行第3轮复习。",
-          "content": "1948年6月26日，柏林空运正式开始。它是冷战早期的重要事件，体现了东西方对峙背景下的战略博弈。请先说出年份，再概括它与冷战格局的关系。",
-          "memoryKey": "1948",
-          "memoryHint": "记忆提示：先记1948年，再联想柏林、空运和冷战初期对峙。本卡重点把年份和空运/冷战建立稳定联想。",
-          "tagTwo": "空运",
-          "tagThree": "冷战",
-          "illustrationUrl": "https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=clean%20realistic%20illustration%20of%20berlin%20airlift%20cargo%20plane%20and%20historic%20city%20map%2C%20minimal%20educational%20card%20art%2C%20soft%20warm%20lighting%2C%20centered%20composition&image_size=portrait_4_3",
-          "aiInsight": "历史第3卡建议先记住1948年和柏林空运，再把这件事放回冷战初期的整体格局中理解。"
         }
       ]
     }

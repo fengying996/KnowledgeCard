@@ -1,6 +1,6 @@
 <script def>
 {
-  "navigationBarTitleText": "妙记"
+  "navigationBarTitleText": "妙卡"
 }
 </script>
 
@@ -8,11 +8,10 @@
 import wx from 'wx';
 
 export default {
-  data: {
-    isNavigating: false
-  },
   onLoad() {
     var self = this;
+
+    this.isNavigating = false;
 
     this.welcomeTimer = setTimeout(function() {
       self.goToIndex();
@@ -32,13 +31,11 @@ export default {
     var self = this;
     var targetUrl = '/pages/index/index?entry=menu';
 
-    if (this.data.isNavigating) {
+    if (this.isNavigating) {
       return;
     }
 
-    this.setData({
-      isNavigating: true
-    });
+    this.isNavigating = true;
 
     if (this.welcomeTimer) {
       clearTimeout(this.welcomeTimer);
@@ -54,17 +51,13 @@ export default {
       url: targetUrl,
       fail: function(error) {
         console.error('redirectTo index failed', error);
-        self.setData({
-          isNavigating: false
-        });
+        self.isNavigating = false;
       },
       complete: function() {
         self.navigationUnlockTimer = setTimeout(function() {
           self.navigationUnlockTimer = null;
-          if (self.data && self.data.isNavigating) {
-            self.setData({
-              isNavigating: false
-            });
+          if (self && self.isNavigating) {
+            self.isNavigating = false;
           }
         }, 1200);
       }
@@ -101,12 +94,14 @@ export default {
 
 <page>
   <view class="page" bindtap="handleWelcomeTap">
-    <image
-      class="welcome-image"
-      src="../../assets/images/welcome.png"
-      mode="aspectFill"
-      bindtap="handleWelcomeTap"
-    ></image>
+    <view class="welcome-frame" bindtap="handleWelcomeTap">
+      <image
+        class="welcome-image"
+        src="../../assets/images/welcome.png"
+        mode="aspectFit"
+        bindtap="handleWelcomeTap"
+      ></image>
+    </view>
   </view>
 </page>
 
@@ -117,8 +112,19 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 16px;
+  padding: 0;
   box-sizing: border-box;
+  background-color: #050607;
+}
+
+.welcome-frame {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 28px;
   background-color: #050607;
 }
 

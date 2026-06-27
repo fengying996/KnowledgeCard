@@ -1,6 +1,6 @@
 <script def>
 {
-  "navigationBarTitleText": "妙记"
+  "navigationBarTitleText": "妙卡"
 }
 </script>
 
@@ -99,8 +99,11 @@ function createShuffledOrder(total) {
 function createEmptyChallengeProgress() {
   return {
     keywordProgressMap: {},
+    blankProgressMap: {},
     completedKeywordCount: 0,
-    totalKeywordCount: 0
+    totalKeywordCount: 0,
+    completedBlankCount: 0,
+    totalBlankCount: 0
   };
 }
 
@@ -117,6 +120,90 @@ function getCardKeywords(card) {
   });
 
   return unique;
+}
+
+function getChallengeDisplayTextByField(card, fieldKey) {
+  var source = card && typeof card === 'object' ? card : {};
+  var value = source[fieldKey] ? String(source[fieldKey]) : '';
+  var limitMap = {
+    title: 20,
+    scene: 24,
+    content: 30,
+    memoryHint: 24
+  };
+  var maxLength = limitMap[fieldKey] || 0;
+
+  if (!maxLength || !value || value.length <= maxLength) {
+    return value;
+  }
+
+  return value.slice(0, maxLength - 1) + '…';
+}
+
+function getCardBlankEntries(card) {
+  var source = card && typeof card === 'object' ? card : {};
+  var keywords = getCardKeywords(source);
+  var fieldKeys = ['title', 'scene', 'content', 'memoryHint'];
+  var blankEntries = [];
+  var blankNumber = 0;
+
+  fieldKeys.forEach(function(fieldKey) {
+    var text = getChallengeDisplayTextByField(source, fieldKey);
+    var matches = [];
+
+    if (!text) {
+      return;
+    }
+
+    keywords.forEach(function(keyword, keywordIndex) {
+      var searchStart = 0;
+      var matchIndex = -1;
+
+      if (!keyword) {
+        return;
+      }
+
+      while ((matchIndex = text.indexOf(keyword, searchStart)) !== -1) {
+        matches.push({
+          field: fieldKey,
+          start: matchIndex,
+          end: matchIndex + keyword.length,
+          answer: keyword,
+          keywordIndex: keywordIndex
+        });
+        searchStart = matchIndex + keyword.length;
+      }
+    });
+
+    matches.sort(function(a, b) {
+      if (a.start !== b.start) {
+        return a.start - b.start;
+      }
+      return (b.end - b.start) - (a.end - a.start);
+    });
+
+    matches.forEach(function(match, matchOrder) {
+      var previous = matches[matchOrder - 1];
+
+      if (previous && match.start < previous.end) {
+        return;
+      }
+
+      blankNumber += 1;
+      blankEntries.push({
+        id: 'blank-' + blankNumber,
+        progressIndex: blankEntries.length,
+        blankNumber: blankNumber,
+        field: match.field,
+        start: match.start,
+        end: match.end,
+        answer: match.answer,
+        keywordIndex: match.keywordIndex
+      });
+    });
+  });
+
+  return blankEntries;
 }
 
 function normalizeRecognitionText(text) {
@@ -221,18 +308,25 @@ function getChallengeKeywordScoreValue(card, subject) {
   return keywordCount ? cardScoreValue / keywordCount : 0;
 }
 
-function calculateChallengeScoreValue(subject, progressState, getCardKeywordFlags) {
+function getChallengeBlankScoreValue(card, subject) {
+  var blankCount = getCardBlankEntries(card).length;
+  var cardScoreValue = getChallengeCardScoreValue(subject);
+
+  return blankCount ? cardScoreValue / blankCount : 0;
+}
+
+function calculateChallengeScoreValue(subject, progressState, getCardBlankFlags) {
   var source = subject && typeof subject === 'object' ? subject : {};
   var cards = Array.isArray(source.cards) ? source.cards : [];
   var totalScore = 0;
 
   cards.forEach(function(card) {
-    var keywordScoreValue = getChallengeKeywordScoreValue(card, source);
-    var flags = getCardKeywordFlags(card, progressState);
+    var blankScoreValue = getChallengeBlankScoreValue(card, source);
+    var flags = getCardBlankFlags(card, progressState);
 
     flags.forEach(function(flag) {
       if (flag) {
-        totalScore += keywordScoreValue;
+        totalScore += blankScoreValue;
       }
     });
   });
@@ -255,22 +349,29 @@ function buildChallengeHintWithMemory(baseHint, card) {
   return hint.indexOf(memoryHint) === -1 ? (hint + '。' + memoryHint) : hint;
 }
 
-function applyKeywordMask(text, keywords, draftMap) {
+function applyBlankMask(text, fieldKey, blankEntries, blankFlags, draftMap) {
   var value = text ? String(text) : '';
   var safeDraftMap = draftMap && typeof draftMap === 'object' ? draftMap : {};
+  var safeEntries = Array.isArray(blankEntries) ? blankEntries.filter(function(entry) {
+    return entry.field === fieldKey;
+  }) : [];
+  var parts = [];
+  var cursor = 0;
 
-  if (!value || !Array.isArray(keywords) || !keywords.length) {
+  if (!value || !safeEntries.length) {
     return value;
   }
 
-  keywords.forEach(function(keyword) {
-    if (!keyword) {
-      return;
-    }
-    value = value.split(keyword).join(createMaskToken(keyword, safeDraftMap[keyword] || ''));
+  safeEntries.forEach(function(entry, index) {
+    var completed = Array.isArray(blankFlags) ? Boolean(blankFlags[entry.progressIndex]) : false;
+
+    parts.push(value.slice(cursor, entry.start));
+    parts.push(completed ? entry.answer : createMaskToken(entry.answer, safeDraftMap[entry.id] || ''));
+    cursor = entry.end;
   });
 
-  return value;
+  parts.push(value.slice(cursor));
+  return parts.join('');
 }
 
 function createResultAdviceDots(total, currentIndex) {
@@ -298,6 +399,8 @@ export default {
     currentIndex: 0,
     currentCardIndex: 0,
     challengeShuffleStep: 0,
+    challengeCompletedBlankCount: 0,
+    challengeTotalBlankCount: 0,
     challengeCompletedKeywordCount: 0,
     challengeTotalKeywordCount: 0,
     challengeKeywordItems: [],
@@ -305,6 +408,7 @@ export default {
     challengeListening: false,
     challengeIntroHintShown: false,
     challengeBlankAnswerMap: createEmptyChallengeBlankAnswerMap(),
+    challengeBlankProgressMap: {},
     challengeProgressMap: {},
     modeSelectionTab: 'read',
     selectedStudyMode: 'read',
@@ -313,12 +417,17 @@ export default {
     loadedStudyInsights: {},
     defaultStudyVoiceHint: '点击开启系统语音',
     studyVoiceHint: '点击开启系统语音',
+    studyVoiceHintMarqueeActive: false,
+    studyVoiceHintMarqueeTrackStyle: '',
     studyPageCounterLabel: '1 / 1',
     studyCardTitle: '',
     studyScene: '',
     studyContent: '',
     studyMemoryHint: '',
     studyAiInsight: '',
+    studyImageLoading: false,
+    studyImageLoadFailed: false,
+    studyImageLoadingHintVisible: false,
     studyIndicatorDots: [],
     studyCardScrollTarget: '',
     resultTotalCount: 0,
@@ -343,6 +452,8 @@ export default {
   },
   onLoad() {
     var self = this;
+
+    this.loadedStudyImageUrlMap = {};
 
     this.setData({
       dataLoading: true
@@ -370,16 +481,11 @@ export default {
       }
       this.challengeNextSound = null;
     }
-    if (this.challengeShuffleBgm) {
-      try {
-        this.challengeShuffleBgm.destroy();
-      } catch (error) {
-        console.error('destroy shuffle bgm failed', error);
-      }
-      this.challengeShuffleBgm = null;
-    }
     this.stopResultAiAnalysis();
     this.stopChallengeRecognition();
+    this.clearStudyVoiceHintMarqueeTimer();
+    this.clearStudyImageLoadingHintTimer();
+    this.loadedStudyImageUrlMap = null;
   },
   onKeyUp(event) {
     var action = this.getSubjectSwitchAction(event);
@@ -387,14 +493,12 @@ export default {
     if (event.code === 'Backspace' || event.code === 'Escape' || event.keyCode === 27 || event.keyCode === 8) {
       event.preventDefault();
       if (this.data.stage === 'mode') {
-        this.stopChallengeShuffleBgm();
         this.stopResultAiAnalysis();
         this.setData({ stage: 'menu' });
         return;
       }
       if (this.data.stage === 'study' || this.data.stage === 'result' || this.data.stage === 'challenge_intro') {
         this.stopChallengeRecognition();
-        this.stopChallengeShuffleBgm();
         this.stopResultAiAnalysis();
         this.setData({ stage: 'mode' });
       }
@@ -574,33 +678,72 @@ export default {
     var existingMap = this.data.challengeProgressMap && typeof this.data.challengeProgressMap === 'object'
       ? this.data.challengeProgressMap
       : {};
+    var existingBlankMap = this.data.challengeBlankProgressMap && typeof this.data.challengeBlankProgressMap === 'object'
+      ? this.data.challengeBlankProgressMap
+      : {};
     var progressMap = {};
+    var blankProgressMap = {};
     var completedKeywordCount = 0;
     var totalKeywordCount = 0;
+    var completedBlankCount = 0;
+    var totalBlankCount = 0;
 
     cards.forEach(function(card) {
       var keywords = getCardKeywords(card);
+      var blankEntries = getCardBlankEntries(card);
       var cardId = card && card.id ? String(card.id) : '';
       var existingFlags = cardId && Array.isArray(existingMap[cardId]) ? existingMap[cardId] : [];
-      var nextFlags = keywords.map(function(keyword, index) {
-        return Boolean(existingFlags[index]);
+      var existingBlankFlags = cardId && Array.isArray(existingBlankMap[cardId]) ? existingBlankMap[cardId] : [];
+      var nextBlankFlags = blankEntries.map(function(item, index) {
+        return Boolean(existingBlankFlags[index]);
+      });
+      var nextFlags = keywords.map(function(keyword, keywordIndex) {
+        var relatedEntries = blankEntries.filter(function(entry) {
+          return entry.keywordIndex === keywordIndex;
+        });
+
+        if (!relatedEntries.length) {
+          return Boolean(existingFlags[keywordIndex]);
+        }
+
+        return relatedEntries.every(function(entry, entryIndex) {
+          return Boolean(nextBlankFlags[entry.progressIndex]);
+        });
       });
 
       if (cardId) {
         progressMap[cardId] = nextFlags;
+        blankProgressMap[cardId] = nextBlankFlags;
       }
 
       totalKeywordCount += keywords.length;
+      totalBlankCount += blankEntries.length;
       completedKeywordCount += nextFlags.filter(function(item) {
+        return Boolean(item);
+      }).length;
+      completedBlankCount += nextBlankFlags.filter(function(item) {
         return Boolean(item);
       }).length;
     });
 
     return {
       keywordProgressMap: progressMap,
+      blankProgressMap: blankProgressMap,
       completedKeywordCount: completedKeywordCount,
-      totalKeywordCount: totalKeywordCount
+      totalKeywordCount: totalKeywordCount,
+      completedBlankCount: completedBlankCount,
+      totalBlankCount: totalBlankCount
     };
+  },
+  getCardBlankFlags(card, progressState) {
+    var blankEntries = getCardBlankEntries(card);
+    var source = progressState && progressState.blankProgressMap ? progressState.blankProgressMap : this.data.challengeBlankProgressMap;
+    var cardId = card && card.id ? String(card.id) : '';
+    var flags = cardId && source && Array.isArray(source[cardId]) ? source[cardId] : [];
+
+    return blankEntries.map(function(item, index) {
+      return Boolean(flags[index]);
+    });
   },
   getCardKeywordFlags(card, progressState) {
     var keywords = getCardKeywords(card);
@@ -616,48 +759,66 @@ export default {
     var subject = this.getCurrentSubject() || {};
     var keywords = getCardKeywords(card);
     var flags = this.getCardKeywordFlags(card, progressState);
+    var blankEntries = getCardBlankEntries(card);
+    var blankFlags = this.getCardBlankFlags(card, progressState);
     var firstPendingIndex = flags.indexOf(false);
     var keywordScoreValue = getChallengeKeywordScoreValue(card, subject);
 
     return keywords.map(function(keyword, index) {
-      var fillPercent = flags[index] ? 100 : 0;
+      var relatedEntries = blankEntries.filter(function(entry) {
+        return entry.keywordIndex === index;
+      });
+      var relatedFlags = relatedEntries.map(function(entry) {
+        return Boolean(blankFlags[entry.progressIndex]);
+      });
+      var completedCount = relatedFlags.filter(function(item) {
+        return item;
+      }).length;
+      var fillPercent = relatedFlags.length ? Math.round((completedCount / relatedFlags.length) * 100) : (flags[index] ? 100 : 0);
       return {
         id: (card && card.id ? String(card.id) : 'card') + '-keyword-' + index,
         label: keyword,
         completed: Boolean(flags[index]),
         current: firstPendingIndex === index,
         scoreValue: formatChallengeScore(keywordScoreValue),
+        showFill: fillPercent > 0,
         fillPercent: fillPercent,
-        fillStyle: 'height: ' + Math.round(12 * fillPercent / 100) + 'px;'
+        fillStyle: 'height: ' + Math.max(5, Math.round(14 * fillPercent / 100)) + 'px;'
       };
     });
   },
   buildChallengeDraftMap(card, progressState) {
-    var flags = this.getCardKeywordFlags(card, progressState);
-    var keywords = getCardKeywords(card);
-    var firstPendingIndex = flags.indexOf(false);
+    var blankEntries = getCardBlankEntries(card);
+    var flags = this.getCardBlankFlags(card, progressState);
     var transcript = createRecognitionDraftText(this.data.challengeRecognitionText);
     var draftMap = {};
+    var pendingEntry = null;
 
-    if (!transcript || firstPendingIndex === -1 || !keywords[firstPendingIndex]) {
+    blankEntries.some(function(entry, index) {
+      if (!flags[index]) {
+        pendingEntry = entry;
+        return true;
+      }
+      return false;
+    });
+
+    if (!transcript || !pendingEntry) {
       return draftMap;
     }
 
-    draftMap[keywords[firstPendingIndex]] = transcript;
+    draftMap[pendingEntry.id] = transcript;
     return draftMap;
   },
   buildChallengeBlankAnswerMap(card, progressState) {
-    var flags = this.getCardKeywordFlags(card, progressState);
-    var keywords = getCardKeywords(card);
+    var flags = this.getCardBlankFlags(card, progressState);
+    var blankEntries = getCardBlankEntries(card);
     var blankAnswerMap = {};
-    var blankNumber = 0;
 
-    keywords.forEach(function(keyword, index) {
+    blankEntries.forEach(function(entry, index) {
       if (flags[index]) {
         return;
       }
-      blankNumber += 1;
-      blankAnswerMap[blankNumber] = keyword;
+      blankAnswerMap[entry.blankNumber] = entry.answer;
     });
 
     return blankAnswerMap;
@@ -667,19 +828,21 @@ export default {
 
     return Object.keys(blankAnswerMap).length > 0;
   },
+  getPendingBlankCountForCard(card, progressState) {
+    var blankAnswerMap = this.buildChallengeBlankAnswerMap(card, progressState);
+
+    return Object.keys(blankAnswerMap).length;
+  },
   buildChallengeMaskedCopy(card, progressState) {
-    var flags = this.getCardKeywordFlags(card, progressState);
-    var keywords = getCardKeywords(card);
-    var pendingKeywords = keywords.filter(function(keyword, index) {
-      return !flags[index];
-    });
+    var blankEntries = getCardBlankEntries(card);
+    var blankFlags = this.getCardBlankFlags(card, progressState);
     var draftMap = this.buildChallengeDraftMap(card, progressState);
 
     return {
-      title: applyKeywordMask(card && card.title, pendingKeywords, draftMap),
-      scene: applyKeywordMask(card && card.scene, pendingKeywords, draftMap),
-      content: applyKeywordMask(card && card.content, pendingKeywords, draftMap),
-      memoryHint: applyKeywordMask(card && card.memoryHint, pendingKeywords, draftMap)
+      title: applyBlankMask(getChallengeDisplayTextByField(card, 'title'), 'title', blankEntries, blankFlags, draftMap),
+      scene: applyBlankMask(getChallengeDisplayTextByField(card, 'scene'), 'scene', blankEntries, blankFlags, draftMap),
+      content: applyBlankMask(getChallengeDisplayTextByField(card, 'content'), 'content', blankEntries, blankFlags, draftMap),
+      memoryHint: applyBlankMask(getChallengeDisplayTextByField(card, 'memoryHint'), 'memoryHint', blankEntries, blankFlags, draftMap)
     };
   },
   getCurrentResolvedCardIndex(subject) {
@@ -709,9 +872,9 @@ export default {
     var allCurrentDone = keywordItems.length > 0 && keywordItems.every(function(item) {
       return item.completed;
     });
-    var total = progressState.totalKeywordCount || 0;
-    var completed = progressState.completedKeywordCount || 0;
-    var score = calculateChallengeScoreValue(this.getCurrentSubject(), progressState, this.getCardKeywordFlags.bind(this));
+    var total = progressState.totalBlankCount || 0;
+    var completed = progressState.completedBlankCount || 0;
+    var score = calculateChallengeScoreValue(this.getCurrentSubject(), progressState, this.getCardBlankFlags.bind(this));
     var currentHint = this.data.studyVoiceHint || '';
     var baseHint = '';
 
@@ -753,7 +916,7 @@ export default {
     var total = useKeywordScore ? 100 : (cards.length || subject.pendingCount || 1);
     var safeTotal = total > 0 ? total : 1;
     var score = useKeywordScore
-      ? calculateChallengeScoreValue(subject, progressState, this.getCardKeywordFlags.bind(this))
+      ? calculateChallengeScoreValue(subject, progressState, this.getCardBlankFlags.bind(this))
       : this.data.challengeScore;
     var safeScore = Math.max(0, Math.min(typeof score === 'number' ? score : 0, safeTotal));
     var correctPercent = useKeywordScore ? Math.round(safeScore) : Math.round((safeScore / safeTotal) * 100);
@@ -894,7 +1057,7 @@ export default {
         initialPrompts: [
           {
             role: 'system',
-            content: '你是妙记的中文学习教练。请根据学习结果输出4段简短背诵建议。每段18到32字，不要编号，不要markdown，只返回4段文本，用||分隔。'
+            content: '你是妙卡的中文学习教练。请根据学习结果输出4段简短背诵建议。每段18到32字，不要编号，不要markdown，只返回4段文本，用||分隔。'
           }
         ]
       });
@@ -1029,13 +1192,14 @@ export default {
       dataLoading: false,
       subjects: normalized.subjects,
       loadedStudyInsights: normalized.studyInsights,
-      defaultStudyVoiceHint: normalized.studyVoiceHint,
-      studyVoiceHint: normalized.studyVoiceHint
+      defaultStudyVoiceHint: normalized.studyVoiceHint
     });
+    this.setStudyVoiceHint(normalized.studyVoiceHint);
     this.syncCurrentSubject();
   },
-  syncCurrentSubject() {
+  syncCurrentSubject(options) {
     var subject = this.getCurrentSubject();
+    var config = options && typeof options === 'object' ? options : {};
     var cards = subject && Array.isArray(subject.cards) ? subject.cards : [];
     var playbackOrder = this.getPlaybackOrder(subject);
     var nextCardIndex = cards.length ? Math.min(this.data.currentCardIndex, cards.length - 1) : 0;
@@ -1050,30 +1214,63 @@ export default {
       ? this.buildChallengeBlankAnswerMap(card, challengeProgressState)
       : createEmptyChallengeBlankAnswerMap();
     var challengeScore = isChallengeMode
-      ? calculateChallengeScoreValue(subject, challengeProgressState, this.getCardKeywordFlags.bind(this))
+      ? calculateChallengeScoreValue(subject, challengeProgressState, this.getCardBlankFlags.bind(this))
       : this.data.challengeScore;
+    var blankCount = isChallengeMode ? getCardBlankEntries(card).length : 0;
+    var pendingBlankCount = isChallengeMode ? this.getPendingBlankCountForCard(card, challengeProgressState) : 0;
+    var illustrationUrl = card && card.illustrationUrl ? String(card.illustrationUrl) : '';
+    var hasIllustration = Boolean(illustrationUrl);
+    var shouldShowImageLoading = hasIllustration && this.isRemoteStudyImageUrl(illustrationUrl) && !this.hasLoadedStudyImageUrl(illustrationUrl);
+    var studyCardTitle = isChallengeMode ? this.trimStudyText(maskedCopy.title, 20) : (card && card.title ? String(card.title) : '');
+    var studyScene = isChallengeMode ? this.trimStudyText(maskedCopy.scene, 24) : (card && card.scene ? String(card.scene) : '');
+    var studyContent = isChallengeMode ? this.trimStudyText(maskedCopy.content, 30) : (card && card.content ? String(card.content) : '');
+    var studyMemoryHint = isChallengeMode ? this.trimStudyText(maskedCopy.memoryHint, 24) : (card && card.memoryHint ? String(card.memoryHint) : '');
+    var studyAiInsight = isChallengeMode ? '' : insight;
+    var nextVoiceHint = isChallengeMode
+      ? this.buildChallengeVoiceHint(card, challengeProgressState)
+      : (this.data.defaultStudyVoiceHint || '点击开启系统语音');
 
     this.setData({
       currentCardIndex: nextCardIndex,
       currentSubject: subject || createEmptySubject(),
+      challengeCompletedBlankCount: challengeProgressState.completedBlankCount,
+      challengeTotalBlankCount: challengeProgressState.totalBlankCount,
       challengeCompletedKeywordCount: challengeProgressState.completedKeywordCount,
       challengeTotalKeywordCount: challengeProgressState.totalKeywordCount,
       challengeKeywordItems: keywordItems,
       challengeBlankAnswerMap: challengeBlankAnswerMap,
+      challengeBlankProgressMap: challengeProgressState.blankProgressMap,
       challengeProgressMap: challengeProgressState.keywordProgressMap,
       currentCard: card,
       studyCardScrollTarget: cards.length ? 'study-card-item-' + resolvedCardIndex : '',
       studyPageCounterLabel: this.buildStudyPageCounterLabel(subject),
-      studyCardTitle: this.trimStudyText(isChallengeMode ? maskedCopy.title : card && card.title, 20),
-      studyScene: this.trimStudyText(isChallengeMode ? maskedCopy.scene : card && card.scene, 24),
-      studyContent: this.trimStudyText(isChallengeMode ? maskedCopy.content : card && card.content, 30),
-      studyMemoryHint: this.trimStudyText(isChallengeMode ? maskedCopy.memoryHint : card && card.memoryHint, 24),
-      studyAiInsight: this.trimStudyText(isChallengeMode ? '' : insight, 28),
+      studyCardTitle: studyCardTitle,
+      studyScene: studyScene,
+      studyContent: studyContent,
+      studyMemoryHint: studyMemoryHint,
+      studyAiInsight: studyAiInsight,
+      studyImageLoading: shouldShowImageLoading,
+      studyImageLoadFailed: false,
+      studyImageLoadingHintVisible: false,
       studyIndicatorDots: this.buildStudyIndicatorDots(cards.length, nextCardIndex),
-      challengeScore: challengeScore,
-      studyVoiceHint: isChallengeMode
-        ? this.buildChallengeVoiceHint(card, challengeProgressState)
-        : (this.data.defaultStudyVoiceHint || '点击开启系统语音')
+      challengeScore: challengeScore
+    });
+    if (shouldShowImageLoading) {
+      this.scheduleStudyImageLoadingHint(illustrationUrl);
+    } else {
+      this.clearStudyImageLoadingHintTimer();
+    }
+    this.setStudyVoiceHint(config.resetVoiceHint ? '' : nextVoiceHint);
+
+    console.log('[challenge-debug] current card synced', {
+      subjectTitle: subject && subject.title ? subject.title : '',
+      cardId: card && card.id ? card.id : '',
+      cardTitle: card && card.title ? card.title : '',
+      illustrationUrl: card && card.illustrationUrl ? card.illustrationUrl : '',
+      blankCount: blankCount,
+      pendingBlankCount: pendingBlankCount,
+      completedBlankCountForCard: blankCount - pendingBlankCount,
+      pageLabel: this.buildStudyPageCounterLabel(subject)
     });
   },
   handleStudyCardPrev() {
@@ -1085,12 +1282,16 @@ export default {
       return;
     }
 
+    this.stopSpeechPlayback();
     nextCardIndex = (this.data.currentCardIndex - 1 + cards.length) % cards.length;
     this.setData({
       currentCardIndex: nextCardIndex,
       challengeRecognitionText: ''
     });
-    this.syncCurrentSubject();
+    this.syncCurrentSubject({
+      resetVoiceHint: true
+    });
+    this.resumeReadModeVoiceAfterStudySwitch();
     if (
       this.data.selectedStudyMode === 'challenge' &&
       !this.data.challengeListening &&
@@ -1108,11 +1309,12 @@ export default {
       return;
     }
 
+    this.stopSpeechPlayback();
     if (
       this.data.selectedStudyMode === 'challenge' &&
       this.data.currentCardIndex >= cards.length - 1 &&
-      this.data.challengeTotalKeywordCount > 0 &&
-      this.data.challengeCompletedKeywordCount >= this.data.challengeTotalKeywordCount
+      this.data.challengeTotalBlankCount > 0 &&
+      this.data.challengeCompletedBlankCount >= this.data.challengeTotalBlankCount
     ) {
       this.enterChallengeResult();
       return;
@@ -1123,7 +1325,10 @@ export default {
       currentCardIndex: nextCardIndex,
       challengeRecognitionText: ''
     });
-    this.syncCurrentSubject();
+    this.syncCurrentSubject({
+      resetVoiceHint: true
+    });
+    this.resumeReadModeVoiceAfterStudySwitch();
     if (
       this.data.selectedStudyMode === 'challenge' &&
       !this.data.challengeListening &&
@@ -1143,11 +1348,15 @@ export default {
       return;
     }
 
+    this.stopSpeechPlayback();
     this.setData({
       currentCardIndex: cardIndex,
       challengeRecognitionText: ''
     });
-    this.syncCurrentSubject();
+    this.syncCurrentSubject({
+      resetVoiceHint: true
+    });
+    this.resumeReadModeVoiceAfterStudySwitch();
     if (
       this.data.selectedStudyMode === 'challenge' &&
       !this.data.challengeListening &&
@@ -1163,11 +1372,13 @@ export default {
       return;
     }
 
+    this.stopSpeechPlayback();
     nextIndex = (this.data.currentIndex - 1 + this.data.subjects.length) % this.data.subjects.length;
     this.setData({
       currentIndex: nextIndex
     });
     this.syncCurrentSubject();
+    this.resumeReadModeVoiceAfterStudySwitch();
   },
   handleNextTap() {
     var nextIndex;
@@ -1176,11 +1387,13 @@ export default {
       return;
     }
 
+    this.stopSpeechPlayback();
     nextIndex = (this.data.currentIndex + 1) % this.data.subjects.length;
     this.setData({
       currentIndex: nextIndex
     });
     this.syncCurrentSubject();
+    this.resumeReadModeVoiceAfterStudySwitch();
   },
   setModeSelection(mode) {
     var activeMode = mode === 'challenge' ? 'challenge' : 'read';
@@ -1235,44 +1448,201 @@ export default {
     }
     this.openModeSelection('challenge');
   },
+  clearStudyVoiceHintMarqueeTimer() {
+    if (this.studyVoiceHintMarqueeTimer) {
+      clearTimeout(this.studyVoiceHintMarqueeTimer);
+      this.studyVoiceHintMarqueeTimer = null;
+    }
+  },
+  stopStudyVoiceHintMarquee() {
+    this.clearStudyVoiceHintMarqueeTimer();
+    if (!this.data || !this.data.studyVoiceHintMarqueeActive) {
+      return;
+    }
+    this.setData({
+      studyVoiceHintMarqueeActive: false,
+      studyVoiceHintMarqueeTrackStyle: ''
+    });
+  },
+  stopSpeechPlayback() {
+    if (
+      typeof speechSynthesis !== 'undefined' &&
+      speechSynthesis &&
+      typeof speechSynthesis.cancel === 'function'
+    ) {
+      try {
+        speechSynthesis.cancel();
+      } catch (error) {
+        console.error('speech playback cancel failed', error);
+      }
+    }
+  },
+  resumeReadModeVoiceAfterStudySwitch() {
+    if (this.data.selectedStudyMode !== 'read' || this.data.stage !== 'study') {
+      return;
+    }
+
+    this.playReadModeVoice();
+  },
+  clearStudyImageLoadingHintTimer() {
+    if (this.studyImageLoadingHintTimer) {
+      clearTimeout(this.studyImageLoadingHintTimer);
+      this.studyImageLoadingHintTimer = null;
+    }
+  },
+  scheduleStudyImageLoadingHint(url) {
+    var safeUrl = url ? String(url) : '';
+    var self = this;
+
+    this.clearStudyImageLoadingHintTimer();
+    if (!safeUrl) {
+      return;
+    }
+
+    this.studyImageLoadingHintTimer = setTimeout(function() {
+      var currentUrl = self.data && self.data.currentCard && self.data.currentCard.illustrationUrl
+        ? String(self.data.currentCard.illustrationUrl)
+        : '';
+
+      self.studyImageLoadingHintTimer = null;
+      if (!self.data || !self.data.studyImageLoading || self.data.studyImageLoadFailed || currentUrl !== safeUrl) {
+        return;
+      }
+      self.setData({
+        studyImageLoadingHintVisible: true
+      });
+    }, 450);
+  },
+  estimateStudyVoiceHintMarqueeDuration(text) {
+    var safeText = text ? String(text) : '';
+    var safeLength = safeText.length;
+
+    if (!safeLength) {
+      return 0;
+    }
+
+    return Math.max(4200, Math.min(18000, safeLength * 240));
+  },
+  buildStudyVoiceHintPages(text, maxLength) {
+    var safeText = text ? String(text).trim() : '';
+    var safeMaxLength = maxLength > 0 ? maxLength : 22;
+    var sentenceMatches;
+    var rawSegments;
+    var pages = [];
+
+    if (!safeText) {
+      return [''];
+    }
+
+    sentenceMatches = safeText.match(/[^。！？!?；;，,、]+[。！？!?；;，,、]?/g);
+    rawSegments = sentenceMatches && sentenceMatches.length ? sentenceMatches : [safeText];
+
+    rawSegments.forEach(function(segment) {
+      var value = segment ? String(segment).trim() : '';
+      var start = 0;
+
+      if (!value) {
+        return;
+      }
+
+      while (start < value.length) {
+        pages.push(value.slice(start, start + safeMaxLength));
+        start += safeMaxLength;
+      }
+    });
+
+    return pages.length ? pages : [safeText];
+  },
+  isRemoteStudyImageUrl(url) {
+    var value = url ? String(url) : '';
+
+    return /^https?:\/\//i.test(value);
+  },
+  hasLoadedStudyImageUrl(url) {
+    var value = url ? String(url) : '';
+    var cache = this.loadedStudyImageUrlMap && typeof this.loadedStudyImageUrlMap === 'object'
+      ? this.loadedStudyImageUrlMap
+      : {};
+
+    return Boolean(value && cache[value]);
+  },
+  setStudyVoiceHint(hint, options) {
+    var safeHint = hint ? String(hint) : '';
+    var pages = this.buildStudyVoiceHintPages(safeHint, 22);
+    var shouldPaginate = pages.length > 1;
+    var self = this;
+    var token = (this.studyVoiceHintToken || 0) + 1;
+    var index = 0;
+
+    this.clearStudyVoiceHintMarqueeTimer();
+    this.studyVoiceHintToken = token;
+    this.setData({
+      studyVoiceHint: pages[0] || '',
+      studyVoiceHintMarqueeActive: false,
+      studyVoiceHintMarqueeTrackStyle: ''
+    });
+
+    if (!shouldPaginate) {
+      return;
+    }
+
+    this.studyVoiceHintMarqueeTimer = setInterval(function() {
+      if (!self.data || self.studyVoiceHintToken !== token) {
+        return;
+      }
+      index = (index + 1) % pages.length;
+      self.setData({
+        studyVoiceHint: pages[index] || ''
+      });
+    }, 1600);
+  },
   startReadMode() {
     this.stopChallengeRecognition();
-    this.stopChallengeShuffleBgm();
     this.stopResultAiAnalysis();
+    this.stopSpeechPlayback();
     this.setData({
       currentCardIndex: 0,
       challengeRecognitionText: '',
       challengeListening: false,
       challengeProgressMap: {},
+      challengeBlankProgressMap: {},
       challengeKeywordItems: [],
+      challengeCompletedBlankCount: 0,
+      challengeTotalBlankCount: 0,
       challengeCompletedKeywordCount: 0,
       challengeTotalKeywordCount: 0,
       shuffledCardOrder: [],
       selectedStudyMode: 'read',
       modeSelectionTab: 'read',
-      stage: 'study',
-      studyVoiceHint: this.data.defaultStudyVoiceHint || '点击开启系统语音'
+      stage: 'study'
     });
     this.syncCurrentSubject();
+    this.playReadModeVoice();
   },
   startChallengeMode() {
     var subject = this.getCurrentSubject();
     var cards = subject && Array.isArray(subject.cards) ? subject.cards : [];
     var challengeProgressMap = {};
+    var challengeBlankProgressMap = {};
     var challengeTotalKeywordCount = 0;
+    var challengeTotalBlankCount = 0;
 
     cards.forEach(function(card) {
       var keywords = getCardKeywords(card);
+      var blankEntries = getCardBlankEntries(card);
       if (card && card.id) {
         challengeProgressMap[String(card.id)] = keywords.map(function() {
           return false;
         });
+        challengeBlankProgressMap[String(card.id)] = blankEntries.map(function() {
+          return false;
+        });
       }
       challengeTotalKeywordCount += keywords.length;
+      challengeTotalBlankCount += blankEntries.length;
     });
 
     this.stopChallengeRecognition();
-    this.stopChallengeShuffleBgm();
     this.stopResultAiAnalysis();
     this.setData({
       challengeShuffleStep: 0,
@@ -1281,6 +1651,9 @@ export default {
       challengeListening: false,
       challengeIntroHintShown: false,
       challengeBlankAnswerMap: createEmptyChallengeBlankAnswerMap(),
+      challengeBlankProgressMap: challengeBlankProgressMap,
+      challengeCompletedBlankCount: 0,
+      challengeTotalBlankCount: challengeTotalBlankCount,
       challengeCompletedKeywordCount: 0,
       challengeTotalKeywordCount: challengeTotalKeywordCount,
       challengeProgressMap: challengeProgressMap,
@@ -1289,10 +1662,8 @@ export default {
       modeSelectionTab: 'challenge',
       stage: 'challenge_intro'
     });
-    this.playChallengeShuffleBgm();
   },
   startChallengeStudy() {
-    this.stopChallengeShuffleBgm();
     this.setData({
       challengeShuffleStep: 4,
       currentCardIndex: 0,
@@ -1319,7 +1690,6 @@ export default {
     var resultState = this.buildChallengeResultState();
 
     this.stopChallengeRecognition();
-    this.stopChallengeShuffleBgm();
     this.setData({
       stage: 'result',
       challengeScore: resultState.score,
@@ -1357,6 +1727,71 @@ export default {
       return Boolean(item);
     }).join('。');
   },
+  buildReadModeVoiceCandidates() {
+    var currentSubject = this.data.currentSubject || {};
+    var currentCard = this.data.currentCard || {};
+    var displayParts = [
+      currentSubject.title || '',
+      this.data.studyCardTitle || '',
+      this.data.studyScene || '',
+      this.data.studyContent || '',
+      this.data.studyMemoryHint || ''
+    ];
+    var conciseParts = [
+      currentSubject.title || '',
+      this.data.studyCardTitle || '',
+      this.data.studyContent || '',
+      this.data.studyMemoryHint || ''
+    ];
+    var fallbackParts = [
+      currentSubject.title || '',
+      currentCard && currentCard.title ? String(currentCard.title) : '',
+      currentCard && currentCard.memoryHint ? String(currentCard.memoryHint) : ''
+    ];
+    var candidates = [
+      displayParts.filter(function(item) {
+        return Boolean(item);
+      }).join('。'),
+      conciseParts.filter(function(item) {
+        return Boolean(item);
+      }).join('。'),
+      fallbackParts.filter(function(item) {
+        return Boolean(item);
+      }).join('。'),
+      this.getStudyVoiceText()
+    ];
+
+    return candidates.filter(function(item, index, list) {
+      return Boolean(item) && list.indexOf(item) === index;
+    });
+  },
+  playReadModeVoice() {
+    var candidates = this.buildReadModeVoiceCandidates();
+    var i;
+
+    if (!candidates.length) {
+      this.setStudyVoiceHint('当前卡片暂无可朗读内容');
+      return;
+    }
+
+    for (i = 0; i < candidates.length; i += 1) {
+      if (this.playSpeechText(candidates[i], '系统正在朗读当前文案')) {
+        console.log('[study-voice-debug] read mode voice started', {
+          candidateIndex: i,
+          textLength: candidates[i].length,
+          previewText: candidates[i].slice(0, 48)
+        });
+        return;
+      }
+    }
+
+    console.error('[study-voice-debug] read mode voice start failed', {
+      candidateLengths: candidates.map(function(item) {
+        return item.length;
+      })
+    });
+    this.setStudyVoiceHint('当前预览环境未提供语音能力');
+  },
   playSpeechText(text, playingHint) {
     var value = text ? String(text) : '';
     var hint = playingHint || '系统正在朗读当前文案';
@@ -1371,8 +1806,9 @@ export default {
       try {
         utteranceId = wx.speech.playTTS(value) || '';
         if (utteranceId) {
-          this.setData({
-            studyVoiceHint: hint
+          this.setStudyVoiceHint(hint, {
+            animate: true,
+            speechText: value
           });
           return true;
         }
@@ -1394,8 +1830,9 @@ export default {
         utterance.pitch = 1;
         utterance.volume = 1;
         speechSynthesis.speak(utterance);
-        this.setData({
-          studyVoiceHint: hint
+        this.setStudyVoiceHint(hint, {
+          animate: true,
+          speechText: value
         });
         return true;
       } catch (fallbackError) {
@@ -1404,6 +1841,55 @@ export default {
     }
 
     return false;
+  },
+  handleStudyImageLoad(event) {
+    var card = this.data.currentCard || {};
+    var illustrationUrl = card && card.illustrationUrl ? String(card.illustrationUrl) : '';
+
+    this.clearStudyImageLoadingHintTimer();
+
+    if (illustrationUrl) {
+      if (!this.loadedStudyImageUrlMap || typeof this.loadedStudyImageUrlMap !== 'object') {
+        this.loadedStudyImageUrlMap = {};
+      }
+      this.loadedStudyImageUrlMap[illustrationUrl] = true;
+    }
+
+    this.setData({
+      studyImageLoading: false,
+      studyImageLoadFailed: false,
+      studyImageLoadingHintVisible: false
+    });
+
+    console.log('[challenge-debug] study image loaded', {
+      cardId: card && card.id ? card.id : '',
+      cardTitle: card && card.title ? card.title : '',
+      illustrationUrl: card && card.illustrationUrl ? card.illustrationUrl : '',
+      detail: event && event.detail ? event.detail : null
+    });
+  },
+  handleStudyImageError(event) {
+    var card = this.data.currentCard || {};
+    var illustrationUrl = card && card.illustrationUrl ? String(card.illustrationUrl) : '';
+
+    this.clearStudyImageLoadingHintTimer();
+
+    if (illustrationUrl && this.loadedStudyImageUrlMap && typeof this.loadedStudyImageUrlMap === 'object') {
+      delete this.loadedStudyImageUrlMap[illustrationUrl];
+    }
+
+    this.setData({
+      studyImageLoading: false,
+      studyImageLoadFailed: true,
+      studyImageLoadingHintVisible: false
+    });
+
+    console.error('[challenge-debug] study image failed', {
+      cardId: card && card.id ? card.id : '',
+      cardTitle: card && card.title ? card.title : '',
+      illustrationUrl: card && card.illustrationUrl ? card.illustrationUrl : '',
+      detail: event && event.detail ? event.detail : null
+    });
   },
   playChallengeNextAudio() {
     try {
@@ -1414,28 +1900,6 @@ export default {
       this.challengeNextSound.play();
     } catch (error) {
       console.error('play next item audio failed', error);
-    }
-  },
-  playChallengeShuffleBgm() {
-    try {
-      if (!this.challengeShuffleBgm) {
-        this.challengeShuffleBgm = new Sound('../../assets/audio/bgm.mp3');
-        this.challengeShuffleBgm.volume = 0.9;
-      }
-      this.challengeShuffleBgm.play();
-    } catch (error) {
-      console.error('play shuffle bgm failed', error);
-    }
-  },
-  stopChallengeShuffleBgm() {
-    if (!this.challengeShuffleBgm) {
-      return;
-    }
-
-    try {
-      this.challengeShuffleBgm.stop();
-    } catch (error) {
-      console.error('stop shuffle bgm failed', error);
     }
   },
   queueChallengeAutoNext(delay) {
@@ -1454,8 +1918,8 @@ export default {
       }
 
       if (
-        self.data.challengeTotalKeywordCount > 0 &&
-        self.data.challengeCompletedKeywordCount >= self.data.challengeTotalKeywordCount
+        self.data.challengeTotalBlankCount > 0 &&
+        self.data.challengeCompletedBlankCount >= self.data.challengeTotalBlankCount
       ) {
         self.enterChallengeResult();
         return;
@@ -1523,61 +1987,73 @@ export default {
     var subject = this.getCurrentSubject() || {};
     var card = this.data.currentCard || {};
     var progressState = this.buildChallengeProgressState(subject);
-    var keywords = getCardKeywords(card);
+    var blankEntries = getCardBlankEntries(card);
     var cardId = card && card.id ? String(card.id) : '';
-    var flags = this.getCardKeywordFlags(card, progressState).slice();
+    var blankFlags = this.getCardBlankFlags(card, progressState).slice();
     var transcriptText = transcript ? String(transcript).trim() : '';
     var normalizedTranscript = normalizeRecognitionText(transcript);
-    var matchedCount = 0;
-    var matchedKeywords = [];
+    var matchedAnswers = [];
     var matchedAnswerText = '';
-    var i;
-    var keyword;
     var allCardCompleted;
     var refreshedState;
     var score;
     var hintText;
     var speechText = '';
     var newlyCompletedCount = 0;
+    var i;
+    var entry;
+    var matchedEntry = null;
 
-    if (!cardId || !keywords.length) {
+    if (!cardId || !blankEntries.length) {
       return;
     }
 
-    for (i = 0; i < keywords.length; i += 1) {
-      keyword = keywords[i];
-      if (!flags[i] && normalizedTranscript.indexOf(normalizeRecognitionText(keyword)) !== -1) {
-        flags[i] = true;
-        matchedCount += 1;
+    for (i = 0; i < blankEntries.length; i += 1) {
+      entry = blankEntries[i];
+      if (blankFlags[i]) {
+        continue;
+      }
+      if (normalizedTranscript.indexOf(normalizeRecognitionText(entry.answer)) !== -1) {
+        blankFlags[i] = true;
+        matchedAnswers.push(entry.answer);
         newlyCompletedCount += 1;
-        matchedKeywords.push(keyword);
+        matchedEntry = entry;
+        break;
       }
     }
 
-    if (!matchedCount) {
+    if (!matchedAnswers.length) {
       this.setData({
-        challengeRecognitionText: transcriptText,
-        studyVoiceHint: buildChallengeHintWithMemory(
-          transcriptText ? ('识别到：' + transcriptText + '。继续努力，再接再厉') : '继续努力，再接再厉',
-          card
-        )
+        challengeRecognitionText: transcriptText
       });
+      this.setStudyVoiceHint(buildChallengeHintWithMemory(
+        transcriptText ? ('识别到：' + transcriptText + '。继续努力，再接再厉') : '继续努力，再接再厉',
+        card
+      ));
       return;
     }
 
-    progressState.keywordProgressMap[cardId] = flags;
+    progressState.blankProgressMap[cardId] = blankFlags;
     refreshedState = this.buildChallengeProgressState(subject);
-    score = calculateChallengeScoreValue(subject, refreshedState, this.getCardKeywordFlags.bind(this));
-    allCardCompleted = flags.every(function(item) {
+    score = calculateChallengeScoreValue(subject, refreshedState, this.getCardBlankFlags.bind(this));
+    allCardCompleted = blankFlags.every(function(item) {
       return item;
     });
-    matchedAnswerText = matchedKeywords.join('、');
+    matchedAnswerText = matchedAnswers.join('、');
 
-    if (refreshedState.totalKeywordCount > 0 && refreshedState.completedKeywordCount >= refreshedState.totalKeywordCount) {
-      hintText = '识别到：' + transcriptText + '。' + buildChallengePraise('final', matchedKeywords, newlyCompletedCount, score);
+    console.log('[challenge-debug] recognition matched', {
+      transcript: transcriptText,
+      matchedAnswer: matchedAnswerText,
+      blankId: matchedEntry ? matchedEntry.id : '',
+      blankNumber: matchedEntry ? matchedEntry.blankNumber : 0,
+      currentIllustrationUrl: card && card.illustrationUrl ? card.illustrationUrl : ''
+    });
+
+    if (refreshedState.totalBlankCount > 0 && refreshedState.completedBlankCount >= refreshedState.totalBlankCount) {
+      hintText = '识别到：' + transcriptText + '。' + buildChallengePraise('final', matchedAnswers, newlyCompletedCount, score);
       speechText = hintText;
     } else if (allCardCompleted) {
-      hintText = '识别到：' + transcriptText + '。' + buildChallengePraise('card', matchedKeywords, newlyCompletedCount, score);
+      hintText = '识别到：' + transcriptText + '。' + buildChallengePraise('card', matchedAnswers, newlyCompletedCount, score);
       speechText = hintText;
     } else {
       hintText = '识别到：' + transcriptText + '。正确答案：' + matchedAnswerText + '。' + pickRandomText([
@@ -1589,6 +2065,9 @@ export default {
     }
 
     this.setData({
+      challengeBlankProgressMap: refreshedState.blankProgressMap,
+      challengeCompletedBlankCount: refreshedState.completedBlankCount,
+      challengeTotalBlankCount: refreshedState.totalBlankCount,
       challengeProgressMap: refreshedState.keywordProgressMap,
       challengeCompletedKeywordCount: refreshedState.completedKeywordCount,
       challengeTotalKeywordCount: refreshedState.totalKeywordCount,
@@ -1596,13 +2075,11 @@ export default {
       challengeScore: score
     });
     this.syncCurrentSubject();
-    this.setData({
-      studyVoiceHint: buildChallengeHintWithMemory(hintText, card)
-    });
+    this.setStudyVoiceHint(buildChallengeHintWithMemory(hintText, card));
     this.playChallengeNextAudio();
     this.playSpeechText(speechText || hintText, hintText);
 
-    if (refreshedState.totalKeywordCount > 0 && refreshedState.completedKeywordCount >= refreshedState.totalKeywordCount) {
+    if (refreshedState.totalBlankCount > 0 && refreshedState.completedBlankCount >= refreshedState.totalBlankCount) {
       this.stopChallengeRecognition();
       this.queueChallengeAutoNext(1600);
       return;
@@ -1619,6 +2096,7 @@ export default {
     var self = this;
     var progressState;
     var currentCard;
+    var pendingBlankCount;
 
     if (this.data.selectedStudyMode !== 'challenge' || this.data.stage !== 'study') {
       return;
@@ -1626,6 +2104,7 @@ export default {
 
     progressState = this.buildChallengeProgressState(this.data.currentSubject);
     currentCard = this.data.currentCard || this.getCurrentCard(this.data.currentSubject);
+    pendingBlankCount = this.getPendingBlankCountForCard(currentCard, progressState);
 
     if (!this.hasPendingBlanksForCard(currentCard, progressState)) {
       this.stopChallengeRecognition();
@@ -1639,10 +2118,16 @@ export default {
         recognition = new SpeechRecognition();
         this.challengeRecognitionStopping = false;
         recognition.lang = 'zh-CN';
-        recognition.continuous = true;
+        recognition.continuous = false;
         recognition.interimResults = false;
         recognition.maxAlternatives = 1;
         recognition.onstart = function() {
+          console.log('[challenge-debug] recognition round started', {
+            cardId: currentCard && currentCard.id ? currentCard.id : '',
+            cardTitle: currentCard && currentCard.title ? currentCard.title : '',
+            illustrationUrl: currentCard && currentCard.illustrationUrl ? currentCard.illustrationUrl : '',
+            pendingBlankCount: pendingBlankCount
+          });
           if (self.data.challengeIntroHintShown) {
             self.setData({
               challengeListening: true
@@ -1651,21 +2136,28 @@ export default {
           }
           self.setData({
             challengeListening: true,
-            challengeIntroHintShown: true,
-            studyVoiceHint: buildChallengeHintWithMemory('请开始背诵挖空内容', self.data.currentCard)
+            challengeIntroHintShown: true
           });
+          self.setStudyVoiceHint(buildChallengeHintWithMemory('请开始背诵挖空内容', self.data.currentCard));
         };
         recognition.onresult = function(event) {
           var transcript = self.extractRecognitionTranscript(event);
           if (transcript) {
             self.updateChallengeKeywordProgress(transcript);
           }
+          try {
+            if (recognition && typeof recognition.stop === 'function') {
+              recognition.stop();
+            }
+          } catch (stopError) {
+            console.error('recognition round stop failed', stopError);
+          }
         };
         recognition.onerror = function() {
           self.setData({
-            challengeListening: false,
-            studyVoiceHint: buildChallengeHintWithMemory('继续努力，再接再厉', self.data.currentCard)
+            challengeListening: false
           });
+          self.setStudyVoiceHint(buildChallengeHintWithMemory('继续努力，再接再厉', self.data.currentCard));
         };
         recognition.onend = function() {
           if (self.data) {
@@ -1681,7 +2173,7 @@ export default {
             self.data &&
             self.data.stage === 'study' &&
             self.data.selectedStudyMode === 'challenge' &&
-            !(self.data.challengeTotalKeywordCount > 0 && self.data.challengeCompletedKeywordCount >= self.data.challengeTotalKeywordCount) &&
+            !(self.data.challengeTotalBlankCount > 0 && self.data.challengeCompletedBlankCount >= self.data.challengeTotalBlankCount) &&
             !self.challengeAutoNextTimer &&
             self.hasPendingBlanksForCard(self.data.currentCard, self.buildChallengeProgressState(self.data.currentSubject))
           ) {
@@ -1710,20 +2202,31 @@ export default {
     if (wx && wx.speech && typeof wx.speech.startRecognition === 'function') {
       try {
         recognitionId = wx.speech.startRecognition() || '';
-        this.setData(recognitionId
-          ? (this.data.challengeIntroHintShown
+        console.log('[challenge-debug] wx recognition started', {
+          recognitionId: recognitionId,
+          cardId: currentCard && currentCard.id ? currentCard.id : '',
+          cardTitle: currentCard && currentCard.title ? currentCard.title : '',
+          illustrationUrl: currentCard && currentCard.illustrationUrl ? currentCard.illustrationUrl : '',
+          pendingBlankCount: pendingBlankCount
+        });
+        if (recognitionId) {
+          this.setData(this.data.challengeIntroHintShown
             ? {
               challengeListening: true
             }
             : {
               challengeListening: true,
-              challengeIntroHintShown: true,
-              studyVoiceHint: buildChallengeHintWithMemory('请开始背诵挖空内容', this.data.currentCard)
-            })
-          : {
-            challengeListening: false,
-            studyVoiceHint: '当前预览环境未提供语音识别'
+              challengeIntroHintShown: true
+            });
+          if (!this.data.challengeIntroHintShown) {
+            this.setStudyVoiceHint(buildChallengeHintWithMemory('请开始背诵挖空内容', this.data.currentCard));
+          }
+        } else {
+          this.setData({
+            challengeListening: false
           });
+          this.setStudyVoiceHint('当前预览环境未提供语音识别');
+        }
         return;
       } catch (recognitionError) {
         console.error('wx.speech.startRecognition failed', recognitionError);
@@ -1731,30 +2234,16 @@ export default {
     }
 
     this.setData({
-      challengeListening: false,
-      studyVoiceHint: '当前预览环境未提供语音识别'
+      challengeListening: false
     });
+    this.setStudyVoiceHint('当前预览环境未提供语音识别');
   },
   handleStudyVoiceTap() {
     if (this.data.selectedStudyMode === 'challenge') {
       this.startChallengeRecognition();
       return;
     }
-
-    var voiceText = this.getStudyVoiceText();
-
-    if (!voiceText) {
-      this.setData({
-        studyVoiceHint: '当前卡片暂无可朗读内容'
-      });
-      return;
-    }
-
-    if (!this.playSpeechText(voiceText, '系统正在朗读当前文案')) {
-      this.setData({
-        studyVoiceHint: '当前预览环境未提供语音能力'
-      });
-    }
+    this.playReadModeVoice();
   }
 };
 </script>
@@ -1770,7 +2259,7 @@ export default {
     </view>
 
     <view class="empty-state" ink:elif="{{ !subjects.length }}">
-      <text class="empty-title">妙记</text>
+      <text class="empty-title">妙卡</text>
       <text class="empty-copy">当前没有可展示的备考科目。</text>
     </view>
 
@@ -1949,7 +2438,7 @@ export default {
           <text class="result-ai-text">{{ resultSummary }}</text>
         </view>
         <view class="result-pagination">
-          <view ink:for="{{ resultAdviceDots }}" ink:key="id">
+          <view class="result-page-dot-slot" ink:for="{{ resultAdviceDots }}" ink:key="id">
             <view class="result-page-dot result-page-dot-active" ink:if="{{ item.active }}"></view>
             <view class="result-page-dot" ink:else></view>
           </view>
@@ -1998,21 +2487,37 @@ export default {
                 </view>
               </view>
             </view>
-            <image class="study-visual-image" src="{{ currentCard.illustrationUrl }}" mode="aspectFill"></image>
+            <view class="study-visual-wrap">
+              <image
+                class="study-visual-image"
+                src="{{ currentCard.illustrationUrl }}"
+                mode="aspectFill"
+                bindload="handleStudyImageLoad"
+                binderror="handleStudyImageError"
+              ></image>
+              <view class="study-visual-loading study-visual-loading-failed" ink:if="{{ studyImageLoadFailed }}">
+                <text class="study-visual-loading-text">图片加载失败，正在重试网络...</text>
+              </view>
+            </view>
           </view>
         </view>
         <view class="study-bottom-stack">
           <view class="study-voice-wrap">
-            <button class="study-voice-bar" bindtap="handleStudyVoiceTap">{{ studyVoiceHint }}</button>
+            <view class="study-voice-bar" bindtap="handleStudyVoiceTap">
+              <image class="study-voice-icon" src="../../assets/images/icon_smile.png" mode="aspectFit"></image>
+              <text class="study-voice-text">{{ studyVoiceHint }}</text>
+            </view>
           </view>
           <view class="challenge-score-strip challenge-score-strip-voice" ink:if="{{ selectedStudyMode === 'challenge' }}">
             <view class="challenge-score-item" ink:for="{{ challengeKeywordItems }}" ink:key="id">
-              <view class="challenge-score-fill" style="{{ item.fillStyle }}"></view>
+              <view class="challenge-score-fill-window" style="{{ item.fillStyle }}" ink:if="{{ item.showFill }}">
+                <view class="challenge-score-fill-bar"></view>
+              </view>
               <image class="challenge-score-outline" src="../../assets/icons/heart_outline.svg" mode="aspectFit"></image>
             </view>
           </view>
           <view class="study-pagination">
-            <view ink:for="{{ studyIndicatorDots }}" ink:key="id">
+            <view class="study-page-dot-slot" ink:for="{{ studyIndicatorDots }}" ink:key="id">
               <view class="study-page-dot study-page-dot-active" ink:if="{{ item.active }}"></view>
               <view class="study-page-dot" ink:else></view>
             </view>
@@ -2802,6 +3307,14 @@ export default {
   gap: 12px;
   height: 18px;
   flex-shrink: 0;
+  overflow: visible;
+}
+
+.result-page-dot-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .result-page-dot {
@@ -2811,13 +3324,18 @@ export default {
   box-sizing: border-box;
   transform: rotate(45deg);
   background-color: transparent;
+  transition: background-color 0.18s ease, border-color 0.18s ease, opacity 0.18s ease;
   border-radius: 1px;
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.92;
 }
 
 .result-page-dot-active {
   border-color: rgba(236, 245, 239, 0.98);
   background-color: rgba(236, 245, 239, 0.96);
   box-shadow: 0 0 0 1px rgba(236, 245, 239, 0.16);
+  opacity: 1;
 }
 
 .study-shell {
@@ -3003,13 +3521,45 @@ export default {
   overflow: hidden;
 }
 
-.study-visual-image {
+.study-visual-wrap {
   width: 100%;
-  height: 84px;
+  height: 175px;
+  position: relative;
   flex-shrink: 0;
   border-radius: 24px;
   overflow: hidden;
+  background-color: rgba(8, 16, 12, 0.88);
+}
+
+.study-visual-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
   background-color: transparent;
+}
+
+.study-visual-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: rgba(8, 16, 12, 0.88);
+}
+
+.study-visual-loading-failed {
+  gap: 0;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.study-visual-loading-text {
+  color: rgba(214, 235, 220, 0.9);
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
 }
 
 .challenge-score-strip {
@@ -3028,7 +3578,8 @@ export default {
   justify-content: flex-end;
   width: 100%;
   min-height: 24px;
-  padding: 2px 10px 0 0;
+  padding: 0 6px 0 0;
+  margin-top: 10px;
 }
 
 .challenge-score-item {
@@ -3041,27 +3592,24 @@ export default {
   flex-shrink: 0;
 }
 
-.challenge-score-fill {
+.challenge-score-fill-window {
   position: absolute;
-  left: 7px;
+  left: 5px;
   bottom: 4px;
-  width: 10px;
-  border-radius: 999px;
-  background-color: rgba(109, 255, 170, 0.92);
+  width: 14px;
+  overflow: hidden;
   z-index: 1;
+  border-radius: 6px 6px 4px 4px;
 }
 
-.challenge-score-fill-full {
-  height: 12px;
-}
-
-.challenge-score-fill-partial {
-  height: 6px;
-  background-color: rgba(71, 191, 123, 0.88);
-}
-
-.challenge-score-fill-empty {
-  height: 0;
+.challenge-score-fill-bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px 6px 4px 4px;
+  background: linear-gradient(180deg, rgba(122, 255, 180, 0.98) 0%, rgba(56, 197, 112, 0.96) 100%);
 }
 
 .challenge-score-outline {
@@ -3097,23 +3645,47 @@ export default {
 
 .study-voice-bar {
   width: 100%;
-  height: 44px;
-  border: 2px solid rgba(53, 154, 79, 0.88);
-  border-radius: 18px;
-  padding: 0 18px;
+  height: 36px;
+  border: 1px solid rgba(58, 158, 92, 0.72);
+  border-radius: 8px;
+  padding: 0 10px;
   box-sizing: border-box;
   color: rgba(232, 241, 234, 0.94);
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
-  background-color: rgba(5, 12, 8, 0.12);
-  box-shadow: inset 0 0 0 1px rgba(10, 32, 18, 0.52);
+  font-size: 13px;
+  line-height: 16px;
+  text-align: left;
+  background-color: rgba(6, 16, 10, 0.96);
+  box-shadow: inset 0 0 0 1px rgba(14, 34, 20, 0.42);
   align-self: stretch;
   margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  overflow: hidden;
 }
 
 .study-voice-wrap {
   width: 100%;
+  margin-top: 5px;
+}
+
+.study-voice-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.study-voice-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: rgba(232, 241, 234, 0.94);
+  font-size: 13px;
+  line-height: 16px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .study-bottom-stack {
@@ -3135,7 +3707,7 @@ export default {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 0;
+  margin-top: 4px;
   height: 22px;
   min-height: 22px;
   padding-top: 0;
@@ -3143,6 +3715,15 @@ export default {
   box-sizing: border-box;
   flex-shrink: 0;
   overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+.study-page-dot-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .study-page-dot {
@@ -3194,6 +3775,13 @@ export default {
     transform: rotate(360deg);
   }
 }
-</style>
 
+@keyframes study-voice-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 </style>
