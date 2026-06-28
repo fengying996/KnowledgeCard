@@ -1,0 +1,10 @@
+<view class="page" bindtap="handleWelcomeTap">
+  <view class="welcome-frame" bindtap="handleWelcomeTap">
+    <image
+      class="welcome-image"
+      src="../../assets/images/welcome.png"
+      mode="aspectFit"
+      bindtap="handleWelcomeTap"
+    ></image>
+  </view>
+</view>

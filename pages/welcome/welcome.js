@@ -1,10 +1,3 @@
-<script def>
-{
-  "navigationBarTitleText": "妙卡"
-}
-</script>
-
-<script setup>
 import wx from 'wx';
 
 export default {
@@ -90,48 +83,3 @@ export default {
     }
   }
 };
-</script>
-
-<page>
-  <view class="page" bindtap="handleWelcomeTap">
-    <view class="welcome-frame" bindtap="handleWelcomeTap">
-      <image
-        class="welcome-image"
-        src="../../assets/images/welcome.png"
-        mode="aspectFit"
-        bindtap="handleWelcomeTap"
-      ></image>
-    </view>
-  </view>
-</page>
-
-<style>
-.page {
-  width: 480px;
-  height: 352px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #050607;
-}
-
-.welcome-frame {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  border-radius: 28px;
-  background-color: #050607;
-}
-
-.welcome-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 28px;
-}
-
-</style>

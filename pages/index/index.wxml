@@ -1,0 +1,277 @@
+<view class="page">
+  <view class="loading-state" ink:if="{{ dataLoading }}">
+    <view class="loading-dialog">
+      <view class="loading-spinner"></view>
+      <text class="loading-title">数据加载中</text>
+      <text class="loading-copy">让子弹飞一会儿...</text>
+    </view>
+  </view>
+
+  <view class="empty-state" ink:elif="{{ !subjects.length }}">
+    <text class="empty-title">妙卡</text>
+    <text class="empty-copy">当前没有可展示的备考科目。</text>
+  </view>
+
+  <view class="stage-menu" ink:elif="{{ stage === 'menu' }}">
+    <view class="menu-shell">
+      <view class="menu-frame">
+        <view class="gallery-arrow menu-arrow-btn" bindtap="handlePrevTap">
+          <image class="gallery-arrow-icon gallery-arrow-icon-left" src="../../assets/icons/icon_left.png" mode="aspectFit"></image>
+        </view>
+        <view class="menu-inner-frame">
+          <view class="menu-gallery">
+            <view class="gallery-center" bindtap="handleSubjectTap">
+              <view class="subject-card">
+                <text class="subject-title">{{ currentSubject.title }}</text>
+                <text class="menu-count">待学习卡片{{ currentSubject.pendingCount }}张</text>
+              </view>
+            </view>
+          </view>
+          <view class="menu-mode-actions">
+            <view class="mode-btn" bindtap="handleReadModeTap">
+              <text class="mode-btn-text">诵读模式</text>
+            </view>
+            <view class="mode-btn" bindtap="handleChallengeModeTap">
+              <text class="mode-btn-text">闯关模式</text>
+            </view>
+          </view>
+        </view>
+        <view class="gallery-arrow menu-arrow-btn" bindtap="handleNextTap">
+          <image class="gallery-arrow-icon gallery-arrow-icon-right" src="../../assets/icons/icon_right.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="stage-mode" ink:elif="{{ stage === 'mode' }}">
+    <view class="mode-shell">
+      <view class="difficulty-frame">
+        <view class="difficulty-options">
+          <view class="difficulty-option-item" bindtap="handleReadModeTap">
+            <view class="{{ readModeButtonClass }}">
+              <view class="difficulty-btn-pixel-layer" ink:if="{{ modeSelectionTab === 'read' }}">
+                <view class="difficulty-pixel-row">
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                </view>
+                <view class="difficulty-pixel-row difficulty-pixel-row-offset">
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                </view>
+                <view class="difficulty-pixel-row">
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                </view>
+                <view class="difficulty-pixel-row difficulty-pixel-row-offset">
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                </view>
+              </view>
+              <text class="{{ readModeTextClass }}">诵读模式</text>
+            </view>
+          </view>
+          <view class="difficulty-option-item" bindtap="handleChallengeModeTap">
+            <view class="{{ challengeModeButtonClass }}">
+              <view class="difficulty-btn-pixel-layer" ink:if="{{ modeSelectionTab === 'challenge' }}">
+                <view class="difficulty-pixel-row">
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                </view>
+                <view class="difficulty-pixel-row difficulty-pixel-row-offset">
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                </view>
+                <view class="difficulty-pixel-row">
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                </view>
+                <view class="difficulty-pixel-row difficulty-pixel-row-offset">
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-light"></view>
+                  <view class="difficulty-pixel difficulty-pixel-strong"></view>
+                  <view class="difficulty-pixel difficulty-pixel-mid"></view>
+                </view>
+              </view>
+              <text class="{{ challengeModeTextClass }}">闯关模式</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="stage-challenge-intro" ink:elif="{{ stage === 'challenge_intro' }}">
+    <view class="challenge-intro-card" bindtap="handleChallengeIntroTap">
+      <view class="challenge-intro-frame">
+        <image
+          class="challenge-intro-visual"
+          src="../../assets/images/challenge_shuffle_intro.svg"
+          mode="aspectFit"
+        />
+        <view class="challenge-intro-overlay">
+          <text class="challenge-intro-title-text">互动洗牌模式 ↻</text>
+
+          <text class="challenge-intro-symbol symbol-1-corner">♡</text>
+          <text class="challenge-intro-symbol symbol-2-corner">♢</text>
+          <text class="challenge-intro-symbol symbol-3-corner">♣</text>
+          <text class="challenge-intro-symbol symbol-4-corner">♠</text>
+
+          <text class="challenge-intro-number number-1">1</text>
+          <text class="challenge-intro-number number-2">2</text>
+          <text class="challenge-intro-number number-3">3</text>
+          <text class="challenge-intro-number number-4">4</text>
+
+          <view class="challenge-intro-step step-1"><text class="challenge-intro-step-text">1</text></view>
+          <view class="challenge-intro-step step-2"><text class="challenge-intro-step-text">2</text></view>
+          <view class="challenge-intro-step step-3"><text class="challenge-intro-step-text">3</text></view>
+          <view class="challenge-intro-step step-4"><text class="challenge-intro-step-text">4</text></view>
+
+          <text class="challenge-intro-prompt-text">请左右晃动完成洗牌</text>
+          <text class="challenge-intro-phone-arrow-text phone-arrow-left">↶</text>
+          <text class="challenge-intro-phone-arrow-text phone-arrow-right">↷</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="stage-result" ink:elif="{{ stage === 'result' }}">
+    <view class="result-card">
+      <view class="result-header">
+        <text class="result-title">{{ resultHeadline }}</text>
+        <view class="result-badge">
+          <text class="result-badge-text">{{ resultCorrectPercent }}%</text>
+        </view>
+      </view>
+      <view class="result-main">
+        <view class="result-score-panel">
+          <text class="result-score-label">本轮得分</text>
+          <view class="result-score-row">
+            <text class="result-score">{{ challengeScore }}</text>
+            <text class="result-score-total">/ {{ resultTotalCount }}</text>
+          </view>
+          <text class="result-score-caption">{{ resultScoreMessage }}</text>
+        </view>
+        <view class="result-metrics">
+          <view class="result-category-item" ink:for="{{ resultCategoryStats }}" ink:key="id">
+            <view class="result-category-top">
+              <text class="result-category-label">{{ item.label }}</text>
+              <text class="result-category-percent">{{ item.percent }}%</text>
+            </view>
+            <view class="result-category-track">
+              <view class="result-category-fill" style="{{ item.fillStyle }}"></view>
+            </view>
+            <text class="result-category-caption">{{ item.completed }} / {{ item.total }}</text>
+          </view>
+        </view>
+      </view>
+      <view class="result-ai-panel">
+        <view class="result-ai-header">
+          <text class="result-ai-title">AI解读</text>
+          <text class="result-ai-status" ink:if="{{ resultAiLoading }}">分析中...</text>
+          <text class="result-ai-status" ink:else>上下键翻页</text>
+        </view>
+        <text class="result-ai-text">{{ resultSummary }}</text>
+      </view>
+      <view class="result-pagination">
+        <view class="result-page-dot-slot" ink:for="{{ resultAdviceDots }}" ink:key="id">
+          <view class="result-page-dot result-page-dot-active" ink:if="{{ item.active }}"></view>
+          <view class="result-page-dot" ink:else></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="study-shell" ink:else>
+    <view class="study-card">
+      <view class="study-top-grid">
+        <view class="study-main-column">
+          <view class="study-text-panel">
+            <view class="study-head-row">
+              <text class="study-title">{{ currentSubject.title }}</text>
+              <view class="study-page-counter">
+                <text class="study-page-counter-text">{{ studyPageCounterLabel }}</text>
+              </view>
+            </view>
+            <scroll-view class="study-text-scroll" scroll-y="true">
+              <view class="study-text-body">
+                <text class="study-copy study-copy-card-index" ink:if="{{ studyCardTitle }}">{{ studyCardTitle }}</text>
+                <text class="study-copy" ink:if="{{ studyScene }}">{{ studyScene }}</text>
+                <text class="study-copy" ink:if="{{ studyContent }}">{{ studyContent }}</text>
+                <text class="study-copy" ink:if="{{ studyMemoryHint }}">{{ studyMemoryHint }}</text>
+                <text class="study-copy" ink:if="{{ studyAiInsight }}">{{ studyAiInsight }}</text>
+              </view>
+            </scroll-view>
+          </view>
+        </view>
+        <view class="study-side-column">
+          <view class="study-keyword-bar">
+            <text class="study-keyword-label">关键词</text>
+            <view class="study-keyword-chip">
+              <view class="study-keyword-chip-text">
+                <text class="study-keyword-chip-value">{{ currentCard.memoryKey }}</text>
+              </view>
+            </view>
+            <view class="study-keyword-chip">
+              <view class="study-keyword-chip-text">
+                <text class="study-keyword-chip-value">{{ currentCard.tagTwo }}</text>
+              </view>
+            </view>
+            <view class="study-keyword-chip">
+              <view class="study-keyword-chip-text">
+                <text class="study-keyword-chip-value">{{ currentCard.tagThree }}</text>
+              </view>
+            </view>
+          </view>
+          <view class="study-visual-wrap">
+            <image
+              class="study-visual-image"
+              src="{{ currentCard.illustrationUrl }}"
+              mode="aspectFill"
+              bindload="handleStudyImageLoad"
+              binderror="handleStudyImageError"
+            ></image>
+            <view class="study-visual-loading study-visual-loading-failed" ink:if="{{ studyImageLoadFailed }}">
+              <text class="study-visual-loading-text">图片加载失败，正在重试网络...</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="study-bottom-stack">
+        <view class="study-voice-wrap">
+          <view class="study-voice-bar" bindtap="handleStudyVoiceTap">
+            <image class="study-voice-icon" src="../../assets/images/icon_smile.png" mode="aspectFit"></image>
+            <text class="study-voice-text">{{ studyVoiceHint }}</text>
+          </view>
+        </view>
+        <view class="challenge-score-strip challenge-score-strip-voice" ink:if="{{ selectedStudyMode === 'challenge' }}">
+          <view class="challenge-score-item" ink:for="{{ challengeKeywordItems }}" ink:key="id">
+          <view class="challenge-score-fill-window" style="{{ item.fillStyle }}" ink:if="{{ item.showFill }}">
+              <view class="challenge-score-fill-bar"></view>
+            </view>
+            <image class="challenge-score-outline" src="../../assets/icons/heart_outline.svg" mode="aspectFit"></image>
+          </view>
+        </view>
+        <view class="study-pagination">
+          <view class="study-page-dot-slot" ink:for="{{ studyIndicatorDots }}" ink:key="id">
+            <view class="study-page-dot study-page-dot-active" ink:if="{{ item.active }}"></view>
+            <view class="study-page-dot" ink:else></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
